@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import Layout from './components/Layout/Layout';
 import Link from 'next/link';
@@ -10,26 +12,97 @@ import {
 } from "@/components/ui/card"
 import { RATINGS, SERVICES } from './utils/constants';
 import Rating from './components/Rating';
+import { motion } from 'framer-motion';
 
 
 const Home: React.FC = () => {
+
+  const animations = {
+    left: {
+      initial: {
+        x: -100,
+        opacity: 0
+      },
+
+      whileInView: {
+        x: 0,
+        opacity: 1
+      },
+
+      transition: {
+        delay: 0.2,
+        duration: 0.7
+      },
+
+      viewport: {
+        once: true
+      }
+    },
+
+    right: {
+      initial: {
+        x: 100,
+        opacity: 0
+      },
+
+      whileInView: {
+        x: 0,
+        opacity: 1
+      },
+
+      transition: {
+        delay: 0.2,
+        duration: 0.7
+      },
+
+      viewport: {
+        once: true
+      }
+    },
+
+    up: {
+      initial: {
+        y: 100,
+        opacity: 0
+      },
+
+      whileInView: {
+        y: 0,
+        opacity: 1
+      },
+
+      transition: {
+        delay: 0.2,
+        duration: 0.7
+      },
+
+      viewport: {
+        once: true
+      }
+    }
+  }
+
   return (
     <Layout>
       <section className='w-full md:h-[100vh] flex flex-col md:flex-row'>
-        <aside className='md:w-[50%] bg-primaryColor h-full gap-10 flex flex-col justify-center items-start p-8 md:p-14 text-white'>
+        <motion.aside {...animations.left} className='md:w-[50%] bg-primaryColor h-full gap-10 flex flex-col justify-center items-start p-8 md:p-14 text-white'>
           <h1 className='font-bold text-6xl'>
             Locally Farmed Organic Vegetable Delivery
           </h1>
           <h2 className='text-xl'>
             20 years of growing organic vegetables and delivering vegetable boxes from our 12 acre farm in Sussex.
           </h2>
-          <Link href={'/'} className='px-8 py-[7px] border-solid font-bold border-white border-2 rounded-md'>
-            Get In Touch
+          <Link href="/" className="relative inline-flex items-center px-12 py-1 overflow-hidden text-lg font-medium text-white border-2 border-white rounded-md hover:text-primaryColor group hover:bg-white">
+            <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+            <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </span>
+            <span className="relative text-md font-bold">Get In Touch</span>
           </Link>
-        </aside>
-        <img src="/wallpaper.jpeg" className='md:w-[50%]' alt='Logo' />
+        </motion.aside>
+        <motion.img {...animations.right} src="/wallpaper.jpeg" className='md:w-[50%]' alt='Logo' />
       </section>
-      <section className='mt-14'>
+      <motion.section {...animations.up} className='mt-14'>
         <div className='text-center text-secondaryColor'>
           <h5 className='font-bold'>
             Services
@@ -51,16 +124,20 @@ const Home: React.FC = () => {
                   <CardDescription>{card.description}</CardDescription>
                 </CardHeader>
                 <CardFooter>
-                  <Link href={card.link} className={'text-xl font-bold bg-primaryColor text-[#ffffff] px-8 py-[6px] rounded-md w-full'}>
-                    Try Free
-                  </Link>
+                <Link href={card.link} className="relative w-full inline-flex items-center justify-center px-8 py-1 overflow-hidden font-medium text-primaryColor transition duration-300 ease-out border-2 border-primaryColor rounded-md shadow-md group">
+                  <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-primaryColor group-hover:translate-x-0 ease">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                  </span>
+                  <span className="absolute flex items-center justify-center text-xl font-bold w-full h-full text-primaryColor transition-all duration-300 transform group-hover:translate-x-full ease">Try Free</span>
+                  <span className="relative invisible text-xl font-bold">Try Free</span>
+                </Link>
                 </CardFooter>
               </Card>  
             ))
           }
         </aside>
-      </section>
-      <section className="mt-14 bg-[url('/hero-walls.jpg')] bg-center bg-no-repeat bg-cover py-28 px-8 md:px-[unset]">
+      </motion.section>
+      <motion.section {...animations.up} className="mt-14 bg-[url('/hero-walls.jpg')] bg-center bg-no-repeat bg-cover py-28 px-8 md:px-[unset]">
         <aside className='text-center text-white'>
           <h5 className='font-bold text-xl'>
             Meet us better
@@ -104,12 +181,12 @@ const Home: React.FC = () => {
             </p>
           </article>
         </div>
-      </section>
+      </motion.section>
       <section className='mt-14 flex flex-wrap gap-10 items-center justify-center'>
-        <div>
+        <motion.div {...animations.left}>
           <img className='rounded-md' src="https://img.freepik.com/free-photo/high-angle-delicious-salmon-bowl-indoors_23-2150533928.jpg?w=360" alt="AV" />
-        </div>
-        <aside className='flex flex-col gap-10 text-secondaryColor mx-10 md:mx-[unset]'>
+        </motion.div>
+        <motion.aside {...animations.right} className='flex flex-col gap-10 text-secondaryColor mx-10 md:mx-[unset]'>
           <h2 className='text-5xl font-semibold'>
             Why You'll Love Us
           </h2>
@@ -123,9 +200,9 @@ const Home: React.FC = () => {
             <li>Seasonal</li>
             <li>Free Delivery</li>
           </ul>
-        </aside>
+        </motion.aside>
       </section>
-      <section className='mt-14 flex flex-wrap gap-14 items-center justify-center'>
+      <motion.section {...animations.up} className='mt-14 flex flex-wrap gap-14 items-center justify-center'>
         {
           RATINGS.map((feedback, index) => (
             <article key={index} className='flex flex-col gap-2 items-center'>
@@ -144,8 +221,8 @@ const Home: React.FC = () => {
             </article>
           ))
         }
-      </section>
-      <section className='mt-14 bg-[#655441] py-24 px-8 md:px-[unset] flex flex-col items-center justify-center'>
+      </motion.section>
+      <motion.section {...animations.up} className='mt-14 bg-[#655441] py-24 px-8 md:px-[unset] flex flex-col items-center justify-center'>
         <aside className='text-center text-white'>
           <h5 className='font-bold text-xl'>
             Try with our vegetables
@@ -205,10 +282,14 @@ const Home: React.FC = () => {
             </p>
           </article>
         </div>
-        <Link href={'/'} className='px-8 py-[7px] border-solid mt-12 font-bold border-white text-white border-2 rounded-md'>
-          More Recipes
+        <Link href="/" className="relative inline-flex mt-10 items-center px-12 py-1 overflow-hidden text-lg font-medium text-white border-2 border-white rounded-md hover:text-secondaryColor group hover:bg-white">
+          <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+          <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </span>
+          <span className="relative text-md font-bold">More Recipes</span>
         </Link>
-      </section>
+      </motion.section>
     </Layout>
   )
 }

@@ -52,7 +52,7 @@ const Home: React.FC = () => {
                 </CardHeader>
                 <CardFooter>
                   <Link href={card.link} className={'text-xl font-bold bg-primaryColor text-[#ffffff] px-8 py-[6px] rounded-md w-full'}>
-                    Visit
+                    Try Free
                   </Link>
                 </CardFooter>
               </Card>  
@@ -60,51 +60,49 @@ const Home: React.FC = () => {
           }
         </aside>
       </section>
-      <section className='mt-14'>
-        <div className="bg-[url('/hero-walls.jpg')] bg-center bg-no-repeat bg-cover py-28 px-8 md:px-[unset]">
-          <aside className='text-center text-white'>
-            <h5 className='font-bold text-xl'>
-              Meet us better
-            </h5>
-            <h2 className='font-bold md:text-5xl text-4xl mt-4'>
-              Our Organic Farm in Numbers
-            </h2>
-            <hr className='w-[100px] mx-auto border-white border-3 mt-7' />
-          </aside>
-          <div className='mt-10 flex flex-col md:flex-row text-white gap-14 md:gap-32 w-full justify-center'>
-            <article className='text-center'>
-              <strong className='text-5xl'>
-                370
-              </strong>
-              <p>
-                households per month
-              </p>
-            </article>
-            <article className='text-center'>
-              <strong className='text-5xl'>
-                23
-              </strong>
-              <p>
-                experts working
-              </p>
-            </article>
-            <article className='text-center'>
-              <strong className='text-5xl'>
-                5
-              </strong>
-              <p>
-                awards won
-              </p>
-            </article>
-            <article className='text-center'>
-              <strong className='text-5xl'>
-                100%
-              </strong>
-              <p>
-                satisfied customers
-              </p>
-            </article>
-          </div>
+      <section className="mt-14 bg-[url('/hero-walls.jpg')] bg-center bg-no-repeat bg-cover py-28 px-8 md:px-[unset]">
+        <aside className='text-center text-white'>
+          <h5 className='font-bold text-xl'>
+            Meet us better
+          </h5>
+          <h2 className='font-bold md:text-5xl text-4xl mt-4'>
+            Our Organic Farm in Numbers
+          </h2>
+          <hr className='w-[100px] mx-auto border-white border-3 mt-7' />
+        </aside>
+        <div className='mt-10 flex flex-col md:flex-row text-white gap-14 md:gap-32 w-full justify-center'>
+          <article className='text-center'>
+            <strong className='text-5xl'>
+              370
+            </strong>
+            <p>
+              households per month
+            </p>
+          </article>
+          <article className='text-center'>
+            <strong className='text-5xl'>
+              23
+            </strong>
+            <p>
+              experts working
+            </p>
+          </article>
+          <article className='text-center'>
+            <strong className='text-5xl'>
+              5
+            </strong>
+            <p>
+              awards won
+            </p>
+          </article>
+          <article className='text-center'>
+            <strong className='text-5xl'>
+              100%
+            </strong>
+            <p>
+              satisfied customers
+            </p>
+          </article>
         </div>
       </section>
       <section className='mt-14 flex flex-wrap gap-10 items-center justify-center'>
@@ -146,6 +144,70 @@ const Home: React.FC = () => {
             </article>
           ))
         }
+      </section>
+      <section className='mt-14 bg-[#655441] py-24 px-8 md:px-[unset] flex flex-col items-center justify-center'>
+        <aside className='text-center text-white'>
+          <h5 className='font-bold text-xl'>
+            Try with our vegetables
+          </h5>
+          <h2 className='font-bold md:text-5xl text-4xl mt-4'>
+            Our Favourite Recipes
+          </h2>
+          <hr className='w-[100px] mx-auto border-white border-3 mt-7' />
+        </aside>
+        <div className='mt-10 flex flex-col md:flex-row text-white gap-14 md:gap-8 w-full justify-center'>
+          <article className='flex flex-col gap-8 w-[320px]'>
+            <div>
+              <h3 className='text-secondaryColor text-4xl font-bold hover:underline hover:cursor-pointer'>
+                Garlic Parmesan Pasta
+              </h3>
+              <p>
+                September 25, 2019
+              </p>
+            </div>
+            <p className='text-lg'>
+              Ingredients 120ml (1/2 cup) butter 2 tsp. dried basil, crushed 2 tsp. lemon juice 1 1/4 tsp. garlic powder 3/4 tsp. seasoned salt 220g (8 oz.) fettuccine or angel hair pasta (cooked and drained) 360ml (1 1/2 cups) broccoli floweretts
+            </p>
+            <p className='text-lg underline'>
+              Continue Reading...
+            </p>
+          </article>
+          <article className='flex flex-col gap-8 w-[320px]'>
+            <div>
+              <h3 className='text-secondaryColor text-4xl font-bold hover:underline hover:cursor-pointer'>
+                Guacamole
+              </h3>
+              <p>
+                September 25, 2019
+              </p>
+            </div>
+            <p className='text-lg'>
+              Ingredients 4 avocados 2 tablespoons of pico de gallo Juice of 1/2 lime 2 chopped Jalapeño OR 2 tablespoons of crushed red pepper OR 1 tablespoon of cayenne pepper 1 teaspoon of salt 4 teaspoons of olive oil 1 1/2
+            </p>
+            <p className='text-lg underline'>
+              Continue Reading...
+            </p>
+          </article>
+          <article className='flex flex-col gap-8 w-[320px]'>
+            <div>
+              <h3 className='text-secondaryColor text-4xl font-bold hover:underline hover:cursor-pointer'>
+                Spiced Pumpkin Soup
+              </h3>
+              <p>
+                September 25, 2019
+              </p>
+            </div>
+            <p className='text-lg'>
+              Ingredients 1 Tablespoon butter 1 cup onion, chopped 3 Tablespoons all-purpose flour 1/2 teaspoon curry powder 1/4 teaspoon cumin 1/4 teaspoon ground nutmeg 2 garlic cloves, crushed 1 cup peeled and cubed sweet potato 1/4 teaspoon salt 2 14-oz cans
+            </p>
+            <p className='text-lg underline'>
+              Continue Reading...
+            </p>
+          </article>
+        </div>
+        <Link href={'/'} className='px-8 py-[7px] border-solid mt-12 font-bold border-white text-white border-2 rounded-md'>
+          More Recipes
+        </Link>
       </section>
     </Layout>
   )

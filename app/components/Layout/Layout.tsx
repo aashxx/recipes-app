@@ -5,6 +5,7 @@ import { Header } from './Header';
 import { MobileHeader } from './MobileHeader';
 import { Footer } from './Footer';
 import { LayoutProps } from '@/app/utils/types';
+import Head from 'next/head';
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
 
@@ -12,12 +13,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div>
-        <Header setOpenNav={setOpenNav} />
-        <MobileHeader openNav={openNav} setOpenNav={setOpenNav} />
-        <main>
-            { children }
-        </main>
-        <Footer />
+      <Header setOpenNav={setOpenNav} />
+      <MobileHeader openNav={openNav} setOpenNav={setOpenNav} />
+      <main>
+          { children }
+      </main>
+      <Footer />
     </div>
   )
 }

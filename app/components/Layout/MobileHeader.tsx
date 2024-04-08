@@ -36,7 +36,7 @@ export const MobileHeader: React.FC<NavbarProps> = ({ openNav, setOpenNav }) => 
                   </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                  <Link href={'/'} onClick={() => setOpenNav(false)}>
+                  <Link href={'/about'} onClick={() => setOpenNav(false)}>
                       <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>
                           About
                       </NavigationMenuLink>
@@ -50,7 +50,7 @@ export const MobileHeader: React.FC<NavbarProps> = ({ openNav, setOpenNav }) => 
                   </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                  <Link href={'/'} onClick={() => setOpenNav(false)}>
+                  <Link href={'/contact'} onClick={() => setOpenNav(false)}>
                       <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>
                           Contact
                       </NavigationMenuLink>

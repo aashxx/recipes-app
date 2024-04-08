@@ -40,3 +40,27 @@ export const RATINGS = [
         customer: "Michelle"
     },
 ]
+
+export const TEAM = [
+    {
+        photo: "/farooq.jpg",
+        name: "Mohamed Samir",
+        desgn: "Cheif Executive Officer",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, nemo!",
+        email: "mailto:210071601109@crescent.education"
+    },
+    {
+        photo: "/farooq.jpg",
+        name: "Mohammed Hasin",
+        desgn: "Cheif Executive Officer",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, nemo!",
+        email: "mailto:210071601109@crescent.education"
+    },
+    {
+        photo: "/farooq.jpg",
+        name: "Mohamed Mujahith",
+        desgn: "Cheif Executive Officer",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, nemo!",
+        email: "mailto:210071601109@crescent.education"
+    },
+]

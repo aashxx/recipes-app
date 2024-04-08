@@ -9,7 +9,6 @@ import {
     navigationMenuTriggerStyle
 } from "@/components/ui/navigation-menu";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
-import Image from "next/image";
 import Link from "next/link";
 import { NavbarProps } from "@/app/utils/types";
   
@@ -29,7 +28,7 @@ export const Header: React.FC<NavbarProps> = ({ setOpenNav }) => {
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href={'/'} legacyBehavior passHref>
+                    <Link href={'/about'} legacyBehavior passHref>
                         <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>
                             About
                         </NavigationMenuLink>
@@ -43,7 +42,7 @@ export const Header: React.FC<NavbarProps> = ({ setOpenNav }) => {
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href={'/'} legacyBehavior passHref>
+                    <Link href={'/contact'} legacyBehavior passHref>
                         <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>
                             Contact
                         </NavigationMenuLink>

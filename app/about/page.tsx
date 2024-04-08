@@ -1,6 +1,8 @@
+"use client";
+
 import React from 'react'
 import Layout from '../components/Layout/Layout';
-import { RATINGS, TEAM } from '../utils/constants';
+import { ANIMATIONS, RATINGS, TEAM } from '../utils/constants';
 import Rating from '../components/Rating';
 import {
   Card,
@@ -9,11 +11,12 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
   return (
     <Layout>
-      <section className='mt-14 px-6 md:w-[700px] text-secondaryColor mx-auto'>
+      <motion.section {...ANIMATIONS.up} className='mt-14 px-6 md:w-[700px] text-secondaryColor mx-auto'>
         <h2 className='font-semibold text-5xl'>
           About Us
         </h2>
@@ -24,8 +27,8 @@ const About: React.FC = () => {
           <img className='mt-6 rounded-md' src="/hero-walls2.png" alt="AV" />
           <img className='w-[230px] md:w-[400px] absolute top-[85px] left-[82px] md:top-[162px] md:left-[150px]' src="/logov2.png" alt="Nutriverse" />
         </div>
-      </section>
-      <section className='mt-14'>
+      </motion.section>
+      <motion.section {...ANIMATIONS.up} className='mt-14'>
         <div className='text-center text-secondaryColor'>
           <h5 className='font-bold'>
             Testimonials
@@ -55,8 +58,8 @@ const About: React.FC = () => {
             ))
           }
         </div>
-      </section>
-      <section className='mt-14 bg-[#655441] py-20 px-8 md:px-[unset] flex flex-col items-center justify-center'>
+      </motion.section>
+      <motion.section {...ANIMATIONS.up} className='mt-14 bg-[#655441] py-20 px-8 md:px-[unset] flex flex-col items-center justify-center'>
         <div className='text-center text-white'>
             <h5 className='font-bold'>
               Office
@@ -81,7 +84,7 @@ const About: React.FC = () => {
               ))
             }
           </aside>
-      </section>
+      </motion.section>
       <section className='mt-14 text-center'>
         <h2 className='text-5xl font-semibold text-secondaryColor my-10'>
           Let's Grow Something Together.

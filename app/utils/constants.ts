@@ -64,3 +64,69 @@ export const TEAM = [
         email: "mailto:210071601109@crescent.education"
     },
 ]
+
+export const ANIMATIONS = {
+
+    left: {
+      initial: {
+        x: -100,
+        opacity: 0
+      },
+
+      whileInView: {
+        x: 0,
+        opacity: 1
+      },
+
+      transition: {
+        delay: 0.2,
+        duration: 0.7
+      },
+
+      viewport: {
+        once: true
+      }
+    },
+
+    right: {
+      initial: {
+        x: 100,
+        opacity: 0
+      },
+
+      whileInView: {
+        x: 0,
+        opacity: 1
+      },
+
+      transition: {
+        delay: 0.2,
+        duration: 0.7
+      },
+
+      viewport: {
+        once: true
+      }
+    },
+
+    up: {
+      initial: {
+        y: 100,
+        opacity: 0
+      },
+
+      whileInView: {
+        y: 0,
+        opacity: 1
+      },
+
+      transition: {
+        delay: 0.2,
+        duration: 0.7
+      },
+
+      viewport: {
+        once: true
+      }
+    }
+}

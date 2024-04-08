@@ -10,82 +10,17 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { RATINGS, SERVICES } from './utils/constants';
+import { RATINGS, SERVICES, ANIMATIONS } from './utils/constants';
 import Rating from './components/Rating';
 import { motion } from 'framer-motion';
 
 
 const Home: React.FC = () => {
 
-  const animations = {
-    left: {
-      initial: {
-        x: -100,
-        opacity: 0
-      },
-
-      whileInView: {
-        x: 0,
-        opacity: 1
-      },
-
-      transition: {
-        delay: 0.2,
-        duration: 0.7
-      },
-
-      viewport: {
-        once: true
-      }
-    },
-
-    right: {
-      initial: {
-        x: 100,
-        opacity: 0
-      },
-
-      whileInView: {
-        x: 0,
-        opacity: 1
-      },
-
-      transition: {
-        delay: 0.2,
-        duration: 0.7
-      },
-
-      viewport: {
-        once: true
-      }
-    },
-
-    up: {
-      initial: {
-        y: 100,
-        opacity: 0
-      },
-
-      whileInView: {
-        y: 0,
-        opacity: 1
-      },
-
-      transition: {
-        delay: 0.2,
-        duration: 0.7
-      },
-
-      viewport: {
-        once: true
-      }
-    }
-  }
-
   return (
     <Layout>
       <section className='w-full md:h-[100vh] flex flex-col md:flex-row'>
-        <motion.aside {...animations.left} className='md:w-[50%] bg-primaryColor h-full gap-10 flex flex-col justify-center items-start p-8 md:p-14 text-white'>
+        <motion.aside {...ANIMATIONS.left} className='md:w-[50%] bg-primaryColor h-full gap-10 flex flex-col justify-center items-start p-8 md:p-14 text-white'>
           <h1 className='font-bold text-6xl'>
             Locally Farmed Organic Vegetable Delivery
           </h1>
@@ -100,9 +35,9 @@ const Home: React.FC = () => {
             <span className="relative text-md font-bold">Get In Touch</span>
           </Link>
         </motion.aside>
-        <motion.img {...animations.right} src="/wallpaper.jpeg" className='md:w-[50%]' alt='Logo' />
+        <motion.img {...ANIMATIONS.right} src="/wallpaper.jpeg" className='md:w-[50%]' alt='Logo' />
       </section>
-      <motion.section {...animations.up} className='mt-14'>
+      <motion.section {...ANIMATIONS.up} className='mt-14'>
         <div className='text-center text-secondaryColor'>
           <h5 className='font-bold'>
             Services
@@ -137,7 +72,7 @@ const Home: React.FC = () => {
           }
         </aside>
       </motion.section>
-      <motion.section {...animations.up} className="mt-14 bg-[url('/hero-walls.jpg')] bg-center bg-no-repeat bg-cover py-28 px-8 md:px-[unset]">
+      <motion.section {...ANIMATIONS.up} className="mt-14 bg-[url('/hero-walls.jpg')] bg-center bg-no-repeat bg-cover py-28 px-8 md:px-[unset]">
         <aside className='text-center text-white'>
           <h5 className='font-bold text-xl'>
             Meet us better
@@ -183,10 +118,10 @@ const Home: React.FC = () => {
         </div>
       </motion.section>
       <section className='mt-14 flex flex-wrap gap-10 items-center justify-center'>
-        <motion.div {...animations.left}>
+        <motion.div {...ANIMATIONS.left}>
           <img className='rounded-md' src="https://img.freepik.com/free-photo/high-angle-delicious-salmon-bowl-indoors_23-2150533928.jpg?w=360" alt="AV" />
         </motion.div>
-        <motion.aside {...animations.right} className='flex flex-col gap-10 text-secondaryColor mx-10 md:mx-[unset]'>
+        <motion.aside {...ANIMATIONS.right} className='flex flex-col gap-10 text-secondaryColor mx-10 md:mx-[unset]'>
           <h2 className='text-5xl font-semibold'>
             Why You'll Love Us
           </h2>
@@ -202,7 +137,7 @@ const Home: React.FC = () => {
           </ul>
         </motion.aside>
       </section>
-      <motion.section {...animations.up} className='mt-14 flex flex-wrap gap-14 items-center justify-center'>
+      <motion.section {...ANIMATIONS.up} className='mt-14 flex flex-wrap gap-14 items-center justify-center'>
         {
           RATINGS.map((feedback, index) => (
             <article key={index} className='flex flex-col gap-2 items-center'>
@@ -222,7 +157,7 @@ const Home: React.FC = () => {
           ))
         }
       </motion.section>
-      <motion.section {...animations.up} className='mt-14 bg-[#655441] py-24 px-8 md:px-[unset] flex flex-col items-center justify-center'>
+      <motion.section {...ANIMATIONS.up} className='mt-14 bg-[#655441] py-24 px-8 md:px-[unset] flex flex-col items-center justify-center'>
         <aside className='text-center text-white'>
           <h5 className='font-bold text-xl'>
             Try with our vegetables

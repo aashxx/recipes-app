@@ -8,3 +8,8 @@ export interface NavbarProps {
     openNav?: boolean,
     setOpenNav: Dispatch<SetStateAction<boolean>>
 }
+
+
+export interface RatingProps {
+    rating: number;
+}

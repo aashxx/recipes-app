@@ -17,41 +17,41 @@ export const MobileHeader: React.FC<NavbarProps> = ({ openNav, setOpenNav }) => 
 
   return (
     <nav className={`flex flex-col bg-[#ffffff] justify-start gap-24 shadow-2xl bg-[rgba(0, 0, 0, .5)] items-center h-[100vh] w-[70vw] fixed ${openNav ? 'right-0' : '-right-[150%]'} top-0 md:hidden p-4 transition-all duration-500 ease-out`}>
-      <Button className="md:hidden bg-[#20603C] text-[#ffffff] self-end" onClick={() => setOpenNav(false)}>
+      <Button className="md:hidden bg-primaryColor text-[#ffffff] self-end" onClick={() => setOpenNav(false)}>
           <div>
             <IoClose />
           </div>
       </Button>
       <Link href={'/'}>
-        <Image src={'/vercel.svg'} width={100} height={20} alt='Logo' />
+        <img src="/logov1.png" className="w-[220px]" alt="Nutriverse" />
       </Link>
       <div>
         <NavigationMenu>
-          <NavigationMenuList className="flex flex-col gap-5">
+          <NavigationMenuList className="flex flex-col gap-5 text-secondaryColor">
               <NavigationMenuItem>
                   <Link href={'/'} onClick={() => setOpenNav(false)}>
-                      <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-bold hover:text-[#20603C]`}>
+                      <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>
                           Home
                       </NavigationMenuLink>
                   </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                   <Link href={'/'} onClick={() => setOpenNav(false)}>
-                      <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-bold hover:text-[#20603C]`}>
+                      <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>
                           About
                       </NavigationMenuLink>
                   </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                   <Link href={'/'} onClick={() => setOpenNav(false)}>
-                      <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-bold hover:text-[#20603C]`}>
+                      <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>
                           Recipes
                       </NavigationMenuLink>
                   </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
                   <Link href={'/'} onClick={() => setOpenNav(false)}>
-                      <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-bold hover:text-[#20603C]`}>
+                      <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>
                           Contact
                       </NavigationMenuLink>
                   </Link>

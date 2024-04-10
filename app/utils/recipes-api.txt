@@ -1,0 +1,4 @@
+appId = c40f1265
+appKey = %209866619b025e90846a17fa21d00a0911
+
+https://api.edamam.com/api/recipes/v2?type=public&q=chicken&app_id=c40f1265&app_key=%209866619b025e90846a17fa21d00a0911&ingr=4-5&diet=balanced&health=alcohol-free&cuisineType=American&mealType=Dinner

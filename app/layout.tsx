@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
+import Provider from "./components/Provider";
+import { Toaster } from "@/components/ui/toaster";
 
 const dm_sans = DM_Sans({ subsets: ["latin"] });
 
@@ -20,7 +22,10 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
       </head>
       <body className={dm_sans.className}>
-        {children}
+        <Toaster />
+        <Provider>
+          {children}
+        </Provider>
       </body>
     </html>
   );

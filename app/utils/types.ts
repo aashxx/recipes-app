@@ -13,3 +13,7 @@ export interface NavbarProps {
 export interface RatingProps {
     rating: number;
 }
+
+export interface ProviderProps {
+    children: ReactNode
+}

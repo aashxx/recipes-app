@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/components/ui/use-toast';
 
 const contactFormSchema = z.object({
   name: z.string().min(2, {
@@ -30,6 +31,8 @@ const contactFormSchema = z.object({
 
 const Contact: React.FC = () => {
 
+  const { toast } = useToast();
+
   const form = useForm<z.infer<typeof contactFormSchema>>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
@@ -39,8 +42,33 @@ const Contact: React.FC = () => {
     }
   });
 
-  const submitContactForm = (values: z.infer<typeof contactFormSchema>) => {
-    console.log(values);
+  const submitContactForm = async (values: z.infer<typeof contactFormSchema>) => {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          name: values.name,
+          email: values.email,
+          message: values.message
+      })
+    });
+
+    if(response.ok) {
+      toast({
+        title: "Success",
+        description: "Your message has been sent successfully!",
+      });
+      form.reset();
+      
+    } else {
+      toast({
+        title: "Error",
+        description: "Oops! Something went wrong.",
+        variant: "destructive"
+      });
+    }
   }
 
   return (

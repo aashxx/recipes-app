@@ -43,7 +43,7 @@ export const MobileHeader: React.FC<NavbarProps> = ({ openNav, setOpenNav }) => 
                   </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                  <Link href={'/'} onClick={() => setOpenNav(false)}>
+                  <Link href={'/recipes'} onClick={() => setOpenNav(false)}>
                       <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>
                           Recipes
                       </NavigationMenuLink>

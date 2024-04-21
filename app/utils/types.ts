@@ -17,3 +17,14 @@ export interface RatingProps {
 export interface ProviderProps {
     children: ReactNode
 }
+
+export interface RecipeProps {
+    recipe: {
+        uri: string;
+        label: string;
+        image: string;
+        source: string;
+        url: string;
+        healthLabels: string[];
+    };
+}

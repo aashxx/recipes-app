@@ -24,8 +24,8 @@ const About: React.FC = () => {
           We produce locally farmed organic vegetables that are affordable, seasonal, and as fresh as possible.
         </p>
         <div className='relative'>
-          <img className='mt-6 rounded-md' src="/hero-walls2.png" alt="AV" />
-          <img className='w-[230px] md:w-[400px] absolute top-[85px] left-[82px] md:top-[162px] md:left-[150px]' src="/logov2.png" alt="Nutriverse" />
+          <img className='mt-6 rounded-md' src="https://i.postimg.cc/NfVj1KC0/hero-walls2.png" alt="AV" />
+          <img className='w-[230px] md:w-[400px] absolute top-[85px] left-[82px] md:top-[162px] md:left-[150px]' src="https://i.postimg.cc/8cmL7hms/logov2.png" alt="Nutriverse" />
         </div>
       </motion.section>
       <motion.section {...ANIMATIONS.up} className='mt-14'>
@@ -89,7 +89,7 @@ const About: React.FC = () => {
         <h2 className='text-5xl font-semibold text-secondaryColor my-10'>
           Let's Grow Something Together.
         </h2>
-        <Link href="/" className="relative inline-flex items-center px-12 py-1 overflow-hidden text-lg font-medium text-primaryColor border-2 border-primaryColor rounded-md hover:text-white group hover:bg-primaryColor">
+        <Link href="/contact" className="relative inline-flex items-center px-12 py-1 overflow-hidden text-lg font-medium text-primaryColor border-2 border-primaryColor rounded-md hover:text-white group hover:bg-primaryColor">
           <span className="absolute left-0 block w-full h-0 transition-all bg-primaryColor opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
           <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" stroke-linejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>

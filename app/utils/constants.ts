@@ -10,7 +10,7 @@ export const SERVICES = [
         image: "/recipes.jpg",
         title: "Food Recipes",
         description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa cupiditate corrupti rerum libero repellendus incidunt non optio consequuntur, ipsa dolores?",
-        link: "/",
+        link: "/recipes",
     },
     {
         image: "/medicalElder.jpg",
@@ -130,3 +130,22 @@ export const ANIMATIONS = {
       }
     }
 }
+
+export const FILTERS = [
+  {
+    types: ["Balanced", "High-Fiber", "High-Protein", "Low-Carb", "Low-Fat", "Low-Sodium"],
+    name: "Diet"
+  },
+  {
+    types: ["alcohol-free", "gluter-free", "immuno-supportive", "pork-free", "vegan", "low-sugar"],
+    name: "Health"
+  },
+  {
+    types: ["French", "Indian", "Italian", "Chinese", "Mexican"],
+    name: "Cuisine"
+  },
+  {
+    types: ["breakfast", "lunch", "dinner", "snack", "teatime"],
+    name: "Meal"
+  }
+]

@@ -1,0 +1,161 @@
+{
+    "hits": [
+      {
+        "recipe": {
+          "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_15bf05c9a08a5b7b712ae0d7570672b4",
+          "label": "Chicken Vesuvio",
+          "image": "https://www.edamam.com/web-img/e42/e42f9119813e890af34c259785ae1cfb.jpg",
+          "source": "Serious Eats",
+          "url": "http://www.seriouseats.com/recipes/2011/12/chicken-vesuvio-recipe.html",
+          "healthLabels": [
+            "Alcohol-Free",
+            "Peanut-Free",
+            "Tree-Nut-Free",
+            "Soy-Free",
+            "Fish-Free"
+          ]
+        }
+      },
+      {
+        "recipe": {
+          "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_627eaf0c5901c215359b55bb11e3ef1b",
+          "label": "Chicken Paprikash",
+          "image": "https://www.edamam.com/web-img/e12/e12b8c5581226d7639168f41d126f2ff.jpg",
+          "source": "No Recipes",
+          "url": "http://norecipes.com/recipe/chicken-paprikash/",
+          "healthLabels": [
+            "Peanut-Free",
+            "Tree-Nut-Free",
+            "Soy-Free",
+            "Fish-Free"
+          ]
+        }
+      },
+      {
+        "recipe": {
+          "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_15f6bf317c97f48bd0dfc78ef9ef3d2e",
+          "label": "Chicken Teriyaki",
+          "image": "https://www.edamam.com/web-img/262/262b4353ca25074178ead2a07cdf7dc1.jpg",
+          "source": "Just One Cookbook",
+          "url": "http://www.justonecookbook.com/chicken-teriyaki/",
+          "healthLabels": [
+            "Peanut-Free",
+            "Tree-Nut-Free",
+            "Fish-Free"
+          ]
+        }
+      },
+      {
+        "recipe": {
+          "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_f5e3b2f7ad4a56e6abedf9075f9a3d8e",
+          "label": "Chicken and Dumplings",
+          "image": "https://www.edamam.com/web-img/1fc/1fc54b360451eda4ba5a73f334fe5087.jpg",
+          "source": "Simply Recipes",
+          "url": "http://www.simplyrecipes.com/recipes/chicken_and_dumplings/",
+          "healthLabels": [
+            "Peanut-Free",
+            "Tree-Nut-Free",
+            "Soy-Free",
+            "Fish-Free"
+          ]
+        }
+      },
+      {
+        "recipe": {
+          "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_d7c8c1fc1edc7408385e4f55775c8e49",
+          "label": "Crispy Chicken",
+          "image": "https://www.edamam.com/web-img/01d/01d7512c36a70c81773a50b014d72896.jpg",
+          "source": "BBC Good Food",
+          "url": "http://www.bbcgoodfood.com/recipes/1055/crispy-chicken",
+          "healthLabels": [
+            "Sugar-Conscious",
+            "Peanut-Free",
+            "Tree-Nut-Free",
+            "Alcohol-Free",
+            "Soy-Free",
+            "Fish-Free"
+          ]
+        }
+      },
+      {
+        "recipe": {
+          "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_3d4d3ef0e4e07cf2c8f41a3424a4d0a4",
+          "label": "Kashmiri Chicken",
+          "image": "https://www.edamam.com/web-img/6e2/6e2c91bf821e6d84a9b14e15bfbd9c7a.jpg",
+          "source": "BBC Good Food",
+          "url": "http://www.bbcgoodfood.com/recipes/4773/kashmiri-chicken",
+          "healthLabels": [
+            "Peanut-Free",
+            "Tree-Nut-Free",
+            "Alcohol-Free",
+            "Soy-Free",
+            "Fish-Free"
+          ]
+        }
+      },
+      {
+        "recipe": {
+          "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_1e6b7b7cfd0e55777a8d3cf54a6318e7",
+          "label": "Bacon Wrapped Chicken",
+          "image": "https://www.edamam.com/web-img/8f7/8f7c5b222bd3f3b5a9c5f3f9172bc4c2.jpg",
+          "source": "Serious Eats",
+          "url": "http://www.seriouseats.com/recipes/2012/12/bacon-wrapped-chicken-recipe.html",
+          "healthLabels": [
+            "Peanut-Free",
+            "Tree-Nut-Free",
+            "Alcohol-Free",
+            "Soy-Free",
+            "Fish-Free"
+          ]
+        }
+      },
+      {
+        "recipe": {
+          "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_9509e8f5ff11d7e5f15b4a4eac114a6b",
+          "label": "Grilled Chicken",
+          "image": "https://www.edamam.com/web-img/c82/c82a0b01bb2740b6d2cd7e64f1a9128a.jpg",
+          "source": "Closet Cooking",
+          "url": "http://www.closetcooking.com/2012/11/grilled-chicken.html",
+          "healthLabels": [
+            "Peanut-Free",
+            "Tree-Nut-Free",
+            "Alcohol-Free",
+            "Soy-Free",
+            "Fish-Free"
+          ]
+        }
+      },
+      {
+        "recipe": {
+          "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_e0d5a4e35256b37eb6325dbbe9285d01",
+          "label": "Parmesan Chicken",
+          "image": "https://www.edamam.com/web-img/e71/e71dd9465d371c8dc0225ee114c47816.jpg",
+          "source": "No Recipes",
+          "url": "http://norecipes.com/recipe/chicken-parmesan/",
+          "healthLabels": [
+            "Peanut-Free",
+            "Tree-Nut-Free",
+            "Soy-Free",
+            "Fish-Free"
+          ]
+        }
+      },
+      {
+        "recipe": {
+          "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_e5a0a18056e7fcdfc38f30c0b35baf7e",
+          "label": "Chicken Marsala",
+          "image": "https://www.edamam.com/web-img/e3c/e3c921db4192b03d632c6a9822986e17.jpg",
+          "source": "Simply Recipes",
+          "url": "http://www.simplyrecipes.com/recipes/chicken_marsala/",
+          "healthLabels": [
+            "Peanut-Free",
+            "Tree-Nut-Free",
+            "Alcohol-Free",
+            "Soy-Free",
+            "Fish-Free"
+          ]
+        }
+      }
+    ]
+  }
+  

@@ -28,3 +28,8 @@ export interface RecipeProps {
         healthLabels: string[];
     };
 }
+
+export interface FilterProps {
+    name: string,
+    types: string[]
+}

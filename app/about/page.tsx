@@ -24,8 +24,8 @@ const About: React.FC = () => {
           We produce locally farmed organic vegetables that are affordable, seasonal, and as fresh as possible.
         </p>
         <div className='relative'>
-          <img className='mt-6 rounded-md' src="https://i.postimg.cc/NfVj1KC0/hero-walls2.png" alt="AV" />
-          <img className='w-[230px] md:w-[400px] absolute top-[85px] left-[82px] md:top-[162px] md:left-[150px]' src="https://i.postimg.cc/8cmL7hms/logov2.png" alt="Nutriverse" />
+          <img className='mt-6 rounded-md' src="/hero-walls2.png" alt="AV" />
+          <img className='w-[230px] md:w-[400px] absolute top-[85px] left-[82px] md:top-[162px] md:left-[150px]' src="/logov2.png" alt="Nutriverse" />
         </div>
       </motion.section>
       <motion.section {...ANIMATIONS.up} className='mt-14'>

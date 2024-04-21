@@ -1,3 +1,4 @@
+import { signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import React from 'react';
 import { FaXTwitter, FaInstagram, FaLinkedin } from "react-icons/fa6";
@@ -5,6 +6,8 @@ import { IoMdCall, IoMdMail } from "react-icons/io";
 
 
 export const Footer: React.FC = () => {
+
+    const { data: session } = useSession();
 
     return (
         <footer className='flex flex-col text-allotrix-text mt-14 px-4 py-6 bg-primaryColor text-white'>
@@ -113,11 +116,21 @@ export const Footer: React.FC = () => {
                         <img src={'/logov2.png'} alt="allotrix" className='max-h-full max-w-full' />
                     </Link>
                 </div>
-                <div className='bg-transparent text-[13px] font-light py-1 px-4 rounded-2xl font-allotrix-font-secondary text-[white] transition-all duration-300 ease-out border-[1px] border-solid hover:border-allotrix-std'>
-                    <Link href='/signup'>
-                        Sign up
-                    </Link>
-                </div>
+                {
+                    session?.user ? (
+                        <div className='bg-transparent text-[13px] font-light py-1 px-4 rounded-2xl font-allotrix-font-secondary text-[white] transition-all duration-300 ease-out border-[1px] border-solid hover:border-allotrix-std'>
+                            <button onClick={() => signOut({ redirect: true, callbackUrl: `${window.location.origin}/login` })}>
+                                Log out
+                            </button>
+                        </div>
+                    ) : (
+                        <div className='bg-transparent text-[13px] font-light py-1 px-4 rounded-2xl font-allotrix-font-secondary text-[white] transition-all duration-300 ease-out border-[1px] border-solid hover:border-allotrix-std'>
+                            <Link href='/signup'>
+                                Sign up
+                            </Link>
+                        </div>
+                    )
+                }
             </aside>
         </footer>
     )

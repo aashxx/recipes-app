@@ -25,7 +25,7 @@ export const Header: React.FC<NavbarProps> = ({ setOpenNav }) => {
     const { data: session } = useSession();
 
     return (
-        <header className='md:p-8 p-4 flex justify-between items-center'>
+        <header className='md:p-8 p-4 flex justify-between z-50 items-center fixed top-0 left-0 h-24 w-full bg-white'>
             <Link href={'/'}>
                 <img src="/logov1.png" className="w-[200px]" alt="Nutriverse" />
             </Link>

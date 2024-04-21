@@ -16,7 +16,7 @@ import { IoClose } from "react-icons/io5";
 export const MobileHeader: React.FC<NavbarProps> = ({ openNav, setOpenNav }) => {
 
   return (
-    <nav className={`flex flex-col bg-[#ffffff] justify-start gap-24 shadow-2xl bg-[rgba(0, 0, 0, .5)] items-center h-[100vh] w-[70vw] fixed ${openNav ? 'right-0' : '-right-[150%]'} top-0 md:hidden p-4 transition-all duration-500 ease-out`}>
+    <nav className={`flex flex-col bg-[#ffffff] z-50 justify-start gap-24 shadow-2xl bg-[rgba(0, 0, 0, .5)] items-center h-[100vh] w-[70vw] fixed ${openNav ? 'right-0' : '-right-[150%]'} top-0 md:hidden p-4 transition-all duration-500 ease-out`}>
       <Button className="md:hidden bg-primaryColor text-[#ffffff] self-end" onClick={() => setOpenNav(false)}>
           <div>
             <IoClose />

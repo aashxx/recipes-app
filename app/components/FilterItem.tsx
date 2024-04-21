@@ -2,7 +2,7 @@
 
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
-import React, { useState } from 'react';
+import React from 'react';
 import { FilterProps } from '../utils/types';
 
 const FilterItem: React.FC<FilterProps> = ({ name, types }) => {
@@ -16,7 +16,7 @@ const FilterItem: React.FC<FilterProps> = ({ name, types }) => {
                 {
                     types.map((type, i) => (
                         <Label key={i} className={`flex items-center cursor-pointer gap-1 border-[2px] rounded-lg border-primaryColor px-2 py-1`}>
-                            <Checkbox value={type} className='border-none data-[state=checked]:bg-primaryColor' />
+                            <Checkbox className='border-none data-[state=checked]:bg-primaryColor' />
                             <p className='mr-6 font-bold'>
                                 {type}
                             </p>

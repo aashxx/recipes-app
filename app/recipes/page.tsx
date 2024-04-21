@@ -6,7 +6,6 @@ import RecipeCard from '../components/RecipeCard';
 import { RecipeProps } from '../utils/types';
 import { useToast } from '@/components/ui/use-toast';
 import Loader from '../components/Loader';
-import recipesDum from '../utils/recipes.json';
 import { Input } from '@/components/ui/input';
 import { FaFilter, FaSearch } from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
@@ -31,13 +30,12 @@ const Recipes: React.FC = () => {
     const { toast } = useToast();
 
     const [searchQuery, setSearchQuery] = useState<string>("salad");
-    const [appliedFilters, setAppliedFilters] = useState<string[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${searchQuery}&app_id=c40f1265&app_key=%209866619b025e90846a17fa21d00a0911${appliedFilters}`, {
+                const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${searchQuery}&app_id=c40f1265&app_key=%209866619b025e90846a17fa21d00a0911`, {
                     method: 'GET',
                     headers: {
                         "Content-Type": "application/json"
@@ -61,10 +59,7 @@ const Recipes: React.FC = () => {
             }
         }
 
-        // TODO: to be edited
-        // setRecipes(recipesDum.hits);
-
-        // fetchData();
+        fetchData();
 
     }, []);
 
@@ -72,7 +67,7 @@ const Recipes: React.FC = () => {
         try {
             if(event.key === "Enter") {
                 setLoading(true);
-                const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${searchQuery}&app_id=c40f1265&app_key=%209866619b025e90846a17fa21d00a0911${appliedFilters}`, {
+                const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${searchQuery}&app_id=c40f1265&app_key=%209866619b025e90846a17fa21d00a0911`, {
                     method: 'GET',
                     headers: {
                         "Content-Type": "application/json"
@@ -94,11 +89,12 @@ const Recipes: React.FC = () => {
         } catch (error) {
             console.error('Error fetching recipes:', error);
         }
+
     }
 
     return (
         <Layout>
-            <section className='mt-14 px-6 md:w-[900px] text-secondaryColor mx-auto'>
+            <section className='mt-36 px-6 md:w-[900px] text-secondaryColor mx-auto'>
                 <h2 className='font-semibold text-5xl'>
                     Our Recipes
                 </h2>

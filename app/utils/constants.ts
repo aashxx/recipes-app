@@ -137,7 +137,7 @@ export const FILTERS = [
     name: "Diet"
   },
   {
-    types: ["alcohol-free", "gluter-free", "immuno-supportive", "pork-free", "vegan", "low-sugar"],
+    types: ["alcohol-free", "gluten-free", "immuno-supportive", "pork-free", "vegan", "low-sugar"],
     name: "Health"
   },
   {
@@ -145,7 +145,7 @@ export const FILTERS = [
     name: "Cuisine"
   },
   {
-    types: ["breakfast", "lunch", "dinner", "snack", "teatime"],
+    types: ["Breakfast", "Lunch", "Dinner", "Snack", "TeaTime"],
     name: "Meal"
   }
 ]

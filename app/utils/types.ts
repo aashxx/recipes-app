@@ -31,5 +31,6 @@ export interface RecipeProps {
 
 export interface FilterProps {
     name: string,
-    types: string[]
+    types: string[],
 }
+

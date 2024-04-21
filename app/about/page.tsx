@@ -16,7 +16,7 @@ import { motion } from 'framer-motion';
 const About: React.FC = () => {
   return (
     <Layout>
-      <motion.section {...ANIMATIONS.up} className='mt-14 px-6 md:w-[700px] text-secondaryColor mx-auto'>
+      <motion.section {...ANIMATIONS.up} className='mt-36 px-6 md:w-[700px] text-secondaryColor mx-auto'>
         <h2 className='font-semibold text-5xl'>
           About Us
         </h2>

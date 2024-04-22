@@ -138,14 +138,14 @@ export const FILTERS = [
   },
   {
     types: ["alcohol-free", "gluten-free", "immuno-supportive", "pork-free", "vegan", "low-sugar"],
-    name: "Health"
+    name: "Health Labels"
   },
   {
     types: ["French", "Indian", "Italian", "Chinese", "Mexican"],
-    name: "Cuisine"
+    name: "Cuisine Type"
   },
   {
     types: ["Breakfast", "Lunch", "Dinner", "Snack", "TeaTime"],
-    name: "Meal"
+    name: "Meal Type"
   }
 ]

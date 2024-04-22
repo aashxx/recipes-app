@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Layout from '../components/Layout/Layout';
 import RecipeCard from '../components/RecipeCard';
-import { RecipeProps } from '../utils/types';
+import { Recipe, RecipeProps } from '../utils/types';
 import { useToast } from '@/components/ui/use-toast';
 import Loader from '../components/Loader';
 import { Input } from '@/components/ui/input';
@@ -21,7 +21,7 @@ import {
   } from "@/components/ui/drawer"
 import { FILTERS } from '../utils/constants';
 import FilterItem from '../components/FilterItem';
-  
+import { v4 as uuidv4 } from 'uuid';
 
 const Recipes: React.FC = () => {
 
@@ -30,66 +30,49 @@ const Recipes: React.FC = () => {
     const { toast } = useToast();
 
     const [searchQuery, setSearchQuery] = useState<string>("salad");
+    const [appliedFilters, setAppliedFilters] = useState<string[]>([]);
+
+    const closeRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                setLoading(true);
-                const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${searchQuery}&app_id=c40f1265&app_key=%209866619b025e90846a17fa21d00a0911`, {
-                    method: 'GET',
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                });
-
-                if(!response.ok) {
-                    toast({
-                        title: "Error!",
-                        description: "Oops! Something went wrong."
-                    });
-                    throw new Error("Error fetching data");
-                }
-
-                const data = await response.json();
-                setLoading(false);
-                setRecipes(data.hits);
-                console.log(data.hits);
-            } catch (error) {
-                console.error('Error fetching recipes:', error);
-            }
-        }
-
         fetchData();
-
     }, []);
 
-    const searchValue = async (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const fetchData = async () => {
         try {
-            if(event.key === "Enter") {
-                setLoading(true);
-                const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${searchQuery}&app_id=c40f1265&app_key=%209866619b025e90846a17fa21d00a0911`, {
-                    method: 'GET',
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
-                });
-
-                if(!response.ok) {
-                    toast({
-                        title: "Error!",
-                        description: "Oops! Something went wrong."
-                    });
-                    throw new Error("Error fetching data");
+            setLoading(true);
+            const filterQuery = appliedFilters.length > 0 ? `&${appliedFilters.join('&')}` : '';
+            const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${searchQuery}&app_id=c40f1265&app_key=%209866619b025e90846a17fa21d00a0911${filterQuery}`, {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json"
                 }
+            });
 
-                const data = await response.json();
-                setLoading(false);
-                setRecipes(data.hits);
+            if(!response.ok) {
+                toast({
+                    title: "Error!",
+                    description: "Oops! Something went wrong."
+                });
+                throw new Error("Error fetching data");
             }
+
+            const data = await response.json();
+            const recipesWithId = data.hits.map((recipe: Recipe) => ({
+                ...recipe, 
+                id: uuidv4()
+            }))
+            setLoading(false);
+            setRecipes(recipesWithId);
+
         } catch (error) {
             console.error('Error fetching recipes:', error);
         }
+    }
 
+    const applyFilters = () => {
+        fetchData();
+        closeRef.current?.click();
     }
 
     return (
@@ -99,8 +82,8 @@ const Recipes: React.FC = () => {
                     Our Recipes
                 </h2>
                 <div className='mt-10 flex gap-2'>
-                    <Input type='text' placeholder='Search Here...' onChange={(e) => setSearchQuery(e.target.value)}  onKeyDown={searchValue} />
-                    <Button className='n bg-primaryColor hover:bg-primaryColor'>
+                    <Input type='text' placeholder='Search Here...' onChange={(e) => setSearchQuery(e.target.value)} onKeyDown={(e) => { e.key === "Enter" && fetchData() }} />
+                    <Button onClick={fetchData} className='n bg-primaryColor hover:bg-primaryColor'>
                         <FaSearch />
                     </Button>
                     <Drawer>
@@ -111,22 +94,22 @@ const Recipes: React.FC = () => {
                         </DrawerTrigger>
                         <DrawerContent className='text-primaryColor'>
                             <DrawerHeader className='mb-4'>
-                                <DrawerTitle className='text-secondaryColor'>Filters</DrawerTitle>
+                                <DrawerTitle className='text-secondaryColor text-2xl'>Filters</DrawerTitle>
                                 <DrawerDescription>Add filters to your search results to obtain accurate recipes</DrawerDescription>
                             </DrawerHeader>
                             <div className='px-4 flex flex-col md:flex-row items-start gap-4 md:gap-10 justify-center'>
                                 {
                                     FILTERS.map((filter) => (
-                                        <FilterItem key={filter.name} name={filter.name} types={filter.types} />
+                                        <FilterItem key={filter.name} name={filter.name} types={filter.types} appliedFilters={appliedFilters} setAppliedFilters={setAppliedFilters} />
                                     ))
                                 }
                             </div>
                             <DrawerFooter>
-                                <Button className='bg-primaryColor hover:bg-primaryColor'>
+                                <Button onClick={applyFilters} className='bg-primaryColor hover:bg-primaryColor'>
                                     Filter
                                 </Button>
                                 <DrawerClose>
-                                    <Button variant="outline">Cancel</Button>
+                                    <Button ref={closeRef} variant="outline">Cancel</Button>
                                 </DrawerClose>
                             </DrawerFooter>
                         </DrawerContent>
@@ -139,9 +122,14 @@ const Recipes: React.FC = () => {
                 ) : (
                     <section className='mt-14 flex flex-col gap-4 px-6 md:w-[900px] text-secondaryColor mx-auto'>
                         {
-                            recipes.map((recipe) => (
-                                <RecipeCard key={recipe.recipe.uri} recipe={recipe.recipe} />
-                            ))
+                            recipes.length > 0 ?
+                                recipes.map((recipe) => (
+                                    <RecipeCard key={recipe.recipe.uri} recipe={recipe.recipe} />
+                                )) : (
+                                    <h2 className='h-[50vh] flex items-center justify-center w-full font-semibold text-2xl'>
+                                        No recipes available
+                                    </h2>
+                                )
                         }
                     </section>
                 )

@@ -29,8 +29,20 @@ export interface RecipeProps {
     };
 }
 
+export interface Recipe {
+    uri: string;
+    id: string;
+    label: string;
+    image: string;
+    source: string;
+    url: string;
+    healthLabels: string[];
+}
+
 export interface FilterProps {
     name: string,
     types: string[],
+    appliedFilters: string[],
+    setAppliedFilters: Dispatch<SetStateAction<string[]>>
 }
 

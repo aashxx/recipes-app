@@ -46,9 +46,23 @@ export const Header: React.FC<NavbarProps> = ({ setOpenNav }) => {
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
+                        <Link href={'/diets'} legacyBehavior passHref>
+                            <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>
+                                Diet
+                            </NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
                         <Link href={'/recipes'} legacyBehavior passHref>
                             <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>
                                 Recipes
+                            </NavigationMenuLink>
+                        </Link>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <Link href={'/about'} legacyBehavior passHref>
+                            <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>
+                                Assistance
                             </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>

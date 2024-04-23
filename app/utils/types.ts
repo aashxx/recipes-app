@@ -5,8 +5,8 @@ export interface LayoutProps {
 }
 
 export interface NavbarProps {
-    openNav?: boolean,
-    setOpenNav: Dispatch<SetStateAction<boolean>>
+    openNav?: boolean;
+    setOpenNav: Dispatch<SetStateAction<boolean>>;
 }
 
 
@@ -15,7 +15,7 @@ export interface RatingProps {
 }
 
 export interface ProviderProps {
-    children: ReactNode
+    children: ReactNode;
 }
 
 export interface RecipeProps {
@@ -40,8 +40,24 @@ export interface Recipe {
 }
 
 export interface FilterProps {
+    name: string;
+    types: string[];
+    appliedFilters: string[];
+    setAppliedFilters: Dispatch<SetStateAction<string[]>>;
+}
+
+export interface DietProps {
+    diet: {
+        id: string,
+        name: string,
+        description: string,
+        image: string
+    }
+}
+
+export interface Diets {
+    id: string,
     name: string,
-    types: string[],
-    appliedFilters: string[],
-    setAppliedFilters: Dispatch<SetStateAction<string[]>>
+    description: string,
+    image: string
 }

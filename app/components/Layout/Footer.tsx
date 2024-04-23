@@ -91,7 +91,7 @@ export const Footer: React.FC = () => {
                             <li>
                                 <a className='flex gap-1 items-center' href="mailto:210071601109@crescent.education?subject=Meeting%20Request">
                                     <IoMdMail />
-                                    nutriverse@gmail.com
+                                    nutriverse2024@gmail.com
                                 </a>
                             </li>
                             <li>

@@ -45,4 +45,3 @@ export interface FilterProps {
     appliedFilters: string[],
     setAppliedFilters: Dispatch<SetStateAction<string[]>>
 }
-

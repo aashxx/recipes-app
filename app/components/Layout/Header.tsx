@@ -3,9 +3,11 @@
 import { Button } from "@/components/ui/button";
 import {
     NavigationMenu,
+    NavigationMenuContent,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
+    NavigationMenuTrigger,
     navigationMenuTriggerStyle
 } from "@/components/ui/navigation-menu";
 import { HiMiniBars3BottomRight } from "react-icons/hi2";
@@ -46,25 +48,26 @@ export const Header: React.FC<NavbarProps> = ({ setOpenNav }) => {
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                        <Link href={'/diets'} legacyBehavior passHref>
-                            <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>
-                                Diet
-                            </NavigationMenuLink>
-                        </Link>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <Link href={'/recipes'} legacyBehavior passHref>
-                            <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>
-                                Recipes
-                            </NavigationMenuLink>
-                        </Link>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <Link href={'/about'} legacyBehavior passHref>
-                            <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>
-                                Assistance
-                            </NavigationMenuLink>
-                        </Link>
+                        <NavigationMenuTrigger className={`${navigationMenuTriggerStyle()} text-xl font-semibold hover:text-primaryColor`}>Services</NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                            <ul className="p-4 w-[500px] flex justify-around font-bold text-secondaryColor">
+                                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-lg font-semibold hover:text-primaryColor`}>
+                                    <Link href="/diets">
+                                        Diet Plans
+                                    </Link>
+                                </NavigationMenuLink>
+                                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-lg font-semibold hover:text-primaryColor`}>
+                                    <Link href="/recipes">
+                                        Recipes
+                                    </Link>
+                                </NavigationMenuLink>
+                                <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-lg font-semibold hover:text-primaryColor`}>
+                                    <Link href="/diets">
+                                        Medical Assistance
+                                    </Link>
+                                </NavigationMenuLink>
+                            </ul>
+                        </NavigationMenuContent>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                         <Link href={'/contact'} legacyBehavior passHref>

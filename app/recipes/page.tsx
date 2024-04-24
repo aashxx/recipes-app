@@ -62,6 +62,7 @@ const Recipes: React.FC = () => {
                 ...recipe, 
                 id: uuidv4()
             }))
+            console.log(recipesWithId);
             setLoading(false);
             setRecipes(recipesWithId);
 

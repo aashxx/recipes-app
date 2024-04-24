@@ -30,7 +30,6 @@ export interface RecipeProps {
 }
 
 export interface Recipe {
-    uri: string;
     id: string;
     label: string;
     image: string;
@@ -60,4 +59,10 @@ export interface Diets {
     name: string,
     description: string,
     image: string
+}
+
+
+export interface RecipeState {
+    recipe: RecipeProps[];
+    setRecipe: (recipe: RecipeProps | null) => void;
 }

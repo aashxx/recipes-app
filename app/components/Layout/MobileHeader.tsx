@@ -59,7 +59,7 @@ export const MobileHeader: React.FC<NavbarProps> = ({ openNav, setOpenNav }) => 
                       </Link>
                     </NavigationMenuLink>
                     <NavigationMenuLink className={`${navigationMenuTriggerStyle()} text-lg font-semibold hover:text-primaryColor`}>
-                      <Link href="/diets">
+                      <Link href="/assistance">
                         Medical Assistance
                       </Link>
                     </NavigationMenuLink>

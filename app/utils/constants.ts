@@ -24,7 +24,7 @@ export const PRICING = [
   {
       name: "Free",
       description: "Trial version to get familiar with Nutriverse.",
-      price: "INR 0",
+      price: 0,
       billed: "/mo",
       link: "/auth/signup",
       heading: "Free Plan Features",
@@ -39,9 +39,9 @@ export const PRICING = [
   {
       name: "Pro",
       description: "Access to all recipes and diet plans",
-      price: "INR 2499",
+      price: 2499,
       billed: "/mo",
-      link: "mailto:tmohamedaashir@gmail.com?subject=Enquiry%20For%20Pro%20Plan%20Access",
+      link: "https://buy.stripe.com/test_5kA6q56waaIfb8A003",
       heading: "Pro Plan Features",
       features: [
           "Access 2100+ recipes",
@@ -54,9 +54,9 @@ export const PRICING = [
   {
       name: "Premium",
       description: "Full access with all features unlocked.",
-      price: "INR 4499",
+      price: 4499,
       billed: "/mo",
-      link: "mailto:tmohamedaashir@gmail.com?subject=Enquiry%20For%20Premium%20Plan%20Access",
+      link: "https://buy.stripe.com/test_3csg0FcUyaIfb8A004",
       buttonText: "Contact Sales",
       heading: "Premium Plan Features",
       features: [
@@ -92,23 +92,23 @@ export const RATINGS = [
 
 export const TEAM = [
     {
-        photo: "/farooq.jpg",
+        photo: "/samir.jpeg",
         name: "Mohamed Samir",
         desgn: "Cheif Executive Officer",
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, nemo!",
         email: "mailto:210071601109@crescent.education"
     },
     {
-        photo: "/farooq.jpg",
+        photo: "/hasin.jpeg",
         name: "Mohammed Hasin",
-        desgn: "Cheif Executive Officer",
+        desgn: "Cheif Marketing Officer",
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, nemo!",
         email: "mailto:210071601109@crescent.education"
     },
     {
-        photo: "/farooq.jpg",
+        photo: "/mujahith.jpeg",
         name: "Mohamed Mujahith",
-        desgn: "Cheif Executive Officer",
+        desgn: "Cheif Operating Officer",
         desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, nemo!",
         email: "mailto:210071601109@crescent.education"
     },

@@ -71,7 +71,7 @@ export interface PricingProps {
     plan: {
         name: string;
         description: string;
-        price: string;
+        price: number;
         billed: string;
         link: string;
         heading: string;

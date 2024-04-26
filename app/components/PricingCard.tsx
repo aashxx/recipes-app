@@ -9,8 +9,10 @@ import {
 } from "@/components/ui/card";
 import { FaCircleCheck } from 'react-icons/fa6';
 import { PricingProps } from '../utils/types';
+import Link from 'next/link';
 
 const PricingCard: React.FC<PricingProps> = ({ plan }) => {
+
   return (
     <Card className='text-secondaryColor flex flex-col border-2 border-secondaryColor justify-around items-start py-4 px-2 w-[250px] h-[484px]'>
       <CardHeader className='flex flex-col items-start'>
@@ -19,18 +21,18 @@ const PricingCard: React.FC<PricingProps> = ({ plan }) => {
       </CardHeader>
       <CardContent className='flex flex-col gap-1 -p-6 items-start w-full'>
         <h2 className='font-bold text-2xl'>
-            {plan.price}
+            INR {plan.price}
         </h2>
         <p>
             {plan.billed}
         </p>
-        <button className="relative w-full inline-flex items-center justify-center px-8 py-1 overflow-hidden font-medium text-primaryColor transition duration-300 ease-out border-2 border-primaryColor rounded-md shadow-md group">
+        <Link href={plan.link} className="relative w-full inline-flex items-center justify-center px-8 py-1 overflow-hidden font-medium text-primaryColor transition duration-300 ease-out border-2 border-primaryColor rounded-md shadow-md group">
             <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-primaryColor group-hover:translate-x-0 ease">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" stroke-linejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </span>
             <span className="absolute flex items-center justify-center text-xl font-bold w-full h-full text-primaryColor transition-all duration-300 transform group-hover:translate-x-full ease">Try Now</span>
             <span className="relative invisible text-xl font-bold">Try Now</span>
-        </button>
+        </Link>
       </CardContent>
       <CardFooter className='flex flex-col gap-2 -p-3 w-full'>
         <h4 className='text-left font-bold'>{plan.heading}</h4>

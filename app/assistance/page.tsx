@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import Layout from '../components/Layout/Layout';
 import {
     Form,
@@ -16,6 +16,8 @@ import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useToast } from '@/components/ui/use-toast';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 const medicalFormSchema = z.object({
     name: z.string().min(2, {
@@ -39,6 +41,15 @@ const medicalFormSchema = z.object({
 });
 
 const Assistance = () => {
+
+    const { data: session } = useSession();
+    const router = useRouter();
+
+    useEffect(() => {
+        if(!session) {
+            router.push('/login');
+        }
+    }, []);
 
     const { toast } = useToast();
 

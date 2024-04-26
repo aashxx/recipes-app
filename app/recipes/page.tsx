@@ -22,8 +22,19 @@ import {
 import { FILTERS } from '../utils/constants';
 import FilterItem from '../components/FilterItem';
 import { v4 as uuidv4 } from 'uuid';
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
 const Recipes: React.FC = () => {
+
+    const { data: session } = useSession();
+    const router = useRouter();
+
+    useEffect(() => {
+        if(!session) {
+            router.push('/login');
+        }
+    }, []);
 
     const [recipes, setRecipes] = useState<RecipeProps[]>([]);
     const [loading, setLoading] = useState(false);

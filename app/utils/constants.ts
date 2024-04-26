@@ -20,6 +20,55 @@ export const SERVICES = [
     },
 ]
 
+export const PRICING = [
+  {
+      name: "Free",
+      description: "Trial version to get familiar with Nutriverse.",
+      price: "INR 0",
+      billed: "/mo",
+      link: "/auth/signup",
+      heading: "Free Plan Features",
+      features: [
+          "Nutriverse Platform",
+          "Access to limited recipes",
+          "Limited Diet Plans",
+          "Basic Analytics",
+          "24/7 Customer Support"
+      ]
+  },
+  {
+      name: "Pro",
+      description: "Access to all recipes and diet plans",
+      price: "INR 2499",
+      billed: "/mo",
+      link: "mailto:tmohamedaashir@gmail.com?subject=Enquiry%20For%20Pro%20Plan%20Access",
+      heading: "Pro Plan Features",
+      features: [
+          "Access 2100+ recipes",
+          "Access 5+ diet plans",
+          "Download diet charts",
+          "Daily diet reminders",
+          "24/7 Customer Support"
+      ]
+  },
+  {
+      name: "Premium",
+      description: "Full access with all features unlocked.",
+      price: "INR 4499",
+      billed: "/mo",
+      link: "mailto:tmohamedaashir@gmail.com?subject=Enquiry%20For%20Premium%20Plan%20Access",
+      buttonText: "Contact Sales",
+      heading: "Premium Plan Features",
+      features: [
+          "Medical assistance",
+          "Assistance from 15 to 30 days",
+          "Unlocks all features in platform",
+          "Advanced recipe search",
+          "24/7 Customer Support"
+      ]
+  },
+]
+
 export const RATINGS = [
     {
         rate: 5,

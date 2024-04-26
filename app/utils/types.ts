@@ -66,3 +66,15 @@ export interface RecipeState {
     recipe: RecipeProps[];
     setRecipe: (recipe: RecipeProps | null) => void;
 }
+
+export interface PricingProps {
+    plan: {
+        name: string;
+        description: string;
+        price: string;
+        billed: string;
+        link: string;
+        heading: string;
+        features: string[];
+    }
+}

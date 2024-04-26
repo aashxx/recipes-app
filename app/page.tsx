@@ -10,9 +10,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { RATINGS, SERVICES, ANIMATIONS } from './utils/constants';
-import Rating from './components/Rating';
+import { SERVICES, ANIMATIONS, PRICING } from './utils/constants';
 import { motion } from 'framer-motion';
+import PricingCard from './components/PricingCard';
 
 
 const Home: React.FC = () => {
@@ -137,25 +137,23 @@ const Home: React.FC = () => {
           </ul>
         </motion.aside>
       </section>
-      <motion.section {...ANIMATIONS.up} className='mt-14 flex flex-wrap gap-14 items-center justify-center'>
-        {
-          RATINGS.map((feedback, index) => (
-            <article key={index} className='flex flex-col gap-2 items-center'>
-              <div>
-                <Rating rating={feedback.rate} />
-              </div>
-              <h3 className='text-2xl font-semibold'>
-                “{feedback.review}”
-              </h3>
-              <p className='w-[270px] text-center text-md'>
-                {feedback.description}
-              </p>
-              <strong className='text-md'>
-                {feedback.customer}
-              </strong>
-            </article>
-          ))
-        }
+      <motion.section {...ANIMATIONS.up} className='mt-14'>
+        <div className='text-center text-secondaryColor'>
+          <h5 className='font-bold'>
+            Pricing
+          </h5>
+          <h2 className='font-bold text-4xl mt-4'>
+            Our Plans
+          </h2>
+          <hr className='w-[100px] mx-auto border-secondaryColor border-3 mt-7' />
+        </div>
+        <aside className='flex flex-wrap gap-10 justify-center mt-10 text-center'>
+          {
+            PRICING.map((plan) => (
+              <PricingCard key={plan.name} plan={plan} />
+            ))
+          }
+        </aside>
       </motion.section>
       <motion.section {...ANIMATIONS.up} className='mt-14 bg-[#655441] py-24 px-8 overflow-x-hidden md:px-[unset] flex flex-col items-center justify-center'>
         <aside className='text-center text-white'>

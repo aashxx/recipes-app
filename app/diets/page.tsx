@@ -9,8 +9,20 @@ import DietCard from '../components/DietCard';
 import { DIETS } from '../utils/constants';
 import { Diets } from '../utils/types';
 import Loader from '../components/Loader';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 const DietsPage = () => {
+
+    const { data: session } = useSession();
+    const router = useRouter();
+
+    useEffect(() => {
+        if(!session) {
+            router.push('/login');
+        }
+    }, []);
+
     const [diets, setDiets] = useState<Diets[]>([]);
     const [loading, setLoading] = useState(false);
     const [searchQuery, setSearchQuery] = useState<string>('');

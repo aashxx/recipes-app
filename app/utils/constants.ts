@@ -41,7 +41,7 @@ export const PRICING = [
       description: "Access to all recipes and diet plans",
       price: 2499,
       billed: "/mo",
-      link: "https://buy.stripe.com/test_5kA6q56waaIfb8A003",
+      link: "https://buy.stripe.com/test_eVag0F7Ae7w3gsUeUZ",
       heading: "Pro Plan Features",
       features: [
           "Access 2100+ recipes",

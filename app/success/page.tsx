@@ -1,14 +1,11 @@
 "use client";
 
 import { useToast } from '@/components/ui/use-toast';
-import { useSession } from 'next-auth/react';
-import { useRouter } from 'next/navigation';
+import { getSession, signOut } from 'next-auth/react';
 import React, { useEffect } from 'react';
 
 const Success = () => {
 
-    const { data: session } = useSession();
-    const router = useRouter();
     const { toast } = useToast();
 
     useEffect(() => {
@@ -16,27 +13,34 @@ const Success = () => {
     }, []);
 
     const paymentSuccess = async () => {
-        const response = await fetch('/api/subscribe', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email: session?.user.email, subscription: "Pro" })
-        })
 
-        if(response.ok) {
-            toast({
-                title: "Success",
-                description: "You're now a Pro user",
-            });
-            router.push('/');
-        } else {
-            toast({
-                title: "Error",
-                description: "Oops! Something went wrong.",
-                variant: "destructive"
-            });
-            console.error("Registration failed!");
+        const session = await getSession();
+        if(session) {
+            const emailId = session.user.email;
+            console.log(emailId);
+            
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: emailId, subscription: "Pro" })
+            })
+    
+            if(response.ok) {
+                toast({
+                    title: "Success",
+                    description: "You're now a Pro user",
+                });
+                await signOut({ redirect: true, callbackUrl: `${window.location.origin}/login` })
+            } else {
+                toast({
+                    title: "Error",
+                    description: "Oops! Something went wrong.",
+                    variant: "destructive"
+                });
+                console.error("Registration failed!");
+            }
         }
     }
 

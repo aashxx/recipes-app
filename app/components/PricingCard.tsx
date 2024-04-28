@@ -14,7 +14,7 @@ import Link from 'next/link';
 const PricingCard: React.FC<PricingProps> = ({ plan }) => {
 
   return (
-    <Card className='text-secondaryColor flex flex-col border-2 border-secondaryColor justify-around items-start py-4 px-2 w-[250px] h-[484px]'>
+    <Card className='text-secondaryColor flex flex-col border-2 border-secondaryColor justify-around items-start py-2 px-4 w-[260px] h-[484px]'>
       <CardHeader className='flex flex-col items-start'>
         <CardTitle>{plan.name}</CardTitle>
         <CardDescription className='text-left'>{plan.description}</CardDescription>

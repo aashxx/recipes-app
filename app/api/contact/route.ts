@@ -19,14 +19,14 @@ export async function POST(req: Request) {
             port: 587,
             secure: false,
             auth: {
-                user: "tmohamedaashir@gmail.com",
-                pass: "vcku ybrb nwji lswt"
+                user: "nutriverse2024@gmail.com",
+                pass: "ulye hxud wxaj dcsl"
             }
         });
 
         await transporter.sendMail({
             from: email,
-            to: "tmohamedaashir@gmail.com",
+            to: "nutriverse2024@gmail.com",
             subject: `${name} Wants to Contact You!`,
             html: `<p>Name: ${name}</p><p>Message: ${message}</p>`
         });

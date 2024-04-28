@@ -34,14 +34,14 @@ export async function POST(req: Request) {
             port: 587,
             secure: false,
             auth: {
-                user: "tmohamedaashir@gmail.com",
-                pass: "vcku ybrb nwji lswt"
+                user: "nutriverse2024@gmail.com",
+                pass: "ulye hxud wxaj dcsl"
             }
         });
 
         await transporter.sendMail({
             from: email,
-            to: "tmohamedaashir@gmail.com",
+            to: "nutriverse2024@gmail.com",
             subject: `Medical Assistance Request from ${name}`,
             html: `<p>Name: ${name}</p><p>Phone no: ${phoneNo}</p><p>Gender: ${gender}</p><p>Age: ${age}</p><p>Blood Group: ${bloodGroup}</p><p>Height: ${height}</p><p>Weight: ${weight}</p><p>Allergies: ${allergies}</p><p>Medical History: ${medicalHistory}</p>`
         });

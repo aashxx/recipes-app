@@ -47,10 +47,16 @@ const Success = () => {
     }
 
     return (
-        <main className='h-[100vh] w-full flex flex-col justify-center items-center'>
-            <h1 className='font-bold text-7xl text-secondaryColor'>
+        <main className='h-[100vh] px-4 w-full flex flex-col gap-10 justify-center items-center'>
+            <div className='w-[230px] md:w-[400px]'>
+                <img src="/logov1.png" alt="" />
+            </div>
+            <h1 className='font-bold text-5xl text-center md:text-7xl text-secondaryColor'>
                 Thanks for your Payment
             </h1>
+            <p className='text-center'>
+                Your account has been upgraded to {subscription} plan and you are requested to login once again
+            </p>
         </main>
     )
 }

@@ -1,11 +1,23 @@
 "use client"
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from '../components/Layout/Layout';
 import Link from 'next/link';
 import LoginForm from '@/components/forms/LoginForm';
+import { useRouter } from 'next/navigation';
+import { useSession } from 'next-auth/react';
 
 const Login: React.FC = () => {
+
+  const { data: session } = useSession();
+  const router = useRouter();
+
+  useEffect(() => {
+    if(session) {
+      router.push('/');
+    }
+  }, [session]);
+
   return (
     <Layout>
         <section className='w-full md:h-[100vh] flex flex-col-reverse md:flex-row'>

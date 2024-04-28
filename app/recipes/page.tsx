@@ -24,6 +24,7 @@ import FilterItem from '../components/FilterItem';
 import { v4 as uuidv4 } from 'uuid';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
+import { MdOutlineLockClock } from "react-icons/md";
 
 const Recipes: React.FC = () => {
 
@@ -89,63 +90,84 @@ const Recipes: React.FC = () => {
 
     return (
         <Layout>
-            <section className='mt-36 px-6 md:w-[900px] text-secondaryColor mx-auto'>
-                <h2 className='font-semibold text-5xl'>
-                    Our Recipes
-                </h2>
-                <div className='mt-10 flex gap-2'>
-                    <Input type='text' placeholder='Search Here...' onChange={(e) => setSearchQuery(e.target.value)} onKeyDown={(e) => { e.key === "Enter" && fetchData() }} />
-                    <Button onClick={fetchData} className='n bg-primaryColor hover:bg-primaryColor'>
-                        <FaSearch />
-                    </Button>
-                    <Drawer>
-                        <DrawerTrigger>
-                            <Button className='bg-primaryColor hover:bg-primaryColor'>
-                                <FaFilter />
-                            </Button>
-                        </DrawerTrigger>
-                        <DrawerContent className='text-primaryColor'>
-                            <DrawerHeader className='mb-4'>
-                                <DrawerTitle className='text-secondaryColor text-2xl'>Filters</DrawerTitle>
-                                <DrawerDescription>Add filters to your search results to obtain accurate recipes</DrawerDescription>
-                            </DrawerHeader>
-                            <div className='px-4 flex flex-col md:flex-row items-start gap-4 md:gap-10 justify-center'>
-                                {
-                                    FILTERS.map((filter) => (
-                                        <FilterItem key={filter.name} name={filter.name} types={filter.types} appliedFilters={appliedFilters} setAppliedFilters={setAppliedFilters} />
-                                    ))
-                                }
-                            </div>
-                            <DrawerFooter>
-                                <Button onClick={applyFilters} className='bg-primaryColor hover:bg-primaryColor'>
-                                    Filter
-                                </Button>
-                                <DrawerClose>
-                                    <Button ref={closeRef} variant="outline">Cancel</Button>
-                                </DrawerClose>
-                            </DrawerFooter>
-                        </DrawerContent>
-                    </Drawer>
-                </div>
-            </section>  
             {
-                loading ? (
-                    <Loader />
-                ) : (
-                    <section className='mt-14 flex flex-col gap-4 px-6 md:w-[900px] text-secondaryColor mx-auto'>
-                        {
-                            recipes.length > 0 ?
-                                recipes.map((recipe) => (
-                                    <RecipeCard key={recipe.recipe.uri} recipe={recipe.recipe} />
-                                )) : (
-                                    <h2 className='h-[50vh] flex items-center justify-center w-full font-semibold text-2xl'>
-                                        No recipes available
-                                    </h2>
-                                )
-                        }
+                session?.user.subscription === "free" ? (
+                    <section className='h-[100vh] px-4 w-full flex flex-col gap-10 justify-center items-center'>
+                        <div className='w-[230px] md:w-[400px]'>
+                            <img src="/logov1.png" alt="" />
+                        </div>
+                        <h2 className='text-9xl text-primaryColor'>
+                            <MdOutlineLockClock />
+                        </h2>
+                        <h3 className='font-bold text-5xl text-center md:text-6xl text-secondaryColor'>
+                            Upgrade your plan
+                        </h3>
+                        <p className='text-center text-[gray]'>
+                            To veiw more recipes, upgrade to Pro or Premium plan
+                        </p>
                     </section>
+                ) : (
+                    <>
+                    <section className='mt-36 px-6 md:w-[900px] text-secondaryColor mx-auto'>
+                        <h2 className='font-semibold text-5xl'>
+                            Our Recipes
+                        </h2>
+                        <div className='mt-10 flex gap-2'>
+                            <Input type='text' placeholder='Search Here...' onChange={(e) => setSearchQuery(e.target.value)} onKeyDown={(e) => { e.key === "Enter" && fetchData() }} />
+                            <Button onClick={fetchData} className='n bg-primaryColor hover:bg-primaryColor'>
+                                <FaSearch />
+                            </Button>
+                            <Drawer>
+                                <DrawerTrigger>
+                                    <Button className='bg-primaryColor hover:bg-primaryColor'>
+                                        <FaFilter />
+                                    </Button>
+                                </DrawerTrigger>
+                                <DrawerContent className='text-primaryColor'>
+                                    <DrawerHeader className='mb-4'>
+                                        <DrawerTitle className='text-secondaryColor text-2xl'>Filters</DrawerTitle>
+                                        <DrawerDescription>Add filters to your search results to obtain accurate recipes</DrawerDescription>
+                                    </DrawerHeader>
+                                    <div className='px-4 flex flex-col md:flex-row items-start gap-4 md:gap-10 justify-center'>
+                                        {
+                                            FILTERS.map((filter) => (
+                                                <FilterItem key={filter.name} name={filter.name} types={filter.types} appliedFilters={appliedFilters} setAppliedFilters={setAppliedFilters} />
+                                            ))
+                                        }
+                                    </div>
+                                    <DrawerFooter>
+                                        <Button onClick={applyFilters} className='bg-primaryColor hover:bg-primaryColor'>
+                                            Filter
+                                        </Button>
+                                        <DrawerClose>
+                                            <Button ref={closeRef} variant="outline">Cancel</Button>
+                                        </DrawerClose>
+                                    </DrawerFooter>
+                                </DrawerContent>
+                            </Drawer>
+                        </div>
+                    </section>  
+                    {
+                        loading ? (
+                            <Loader />
+                        ) : (
+                            <section className='mt-14 flex flex-col gap-4 px-6 md:w-[900px] text-secondaryColor mx-auto'>
+                                {
+                                    recipes.length > 0 ?
+                                        recipes.map((recipe) => (
+                                            <RecipeCard key={recipe.recipe.uri} recipe={recipe.recipe} />
+                                        )) : (
+                                            <h2 className='h-[50vh] flex items-center justify-center w-full font-semibold text-2xl'>
+                                                No recipes available
+                                            </h2>
+                                        )
+                                }
+                            </section>
+                        )
+                    } 
+                    </>
                 )
-            } 
+            }
         </Layout>
     )
 }

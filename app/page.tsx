@@ -178,9 +178,9 @@ const Home: React.FC = () => {
             <p className='text-lg'>
               Ingredients 120ml (1/2 cup) butter 2 tsp. dried basil, crushed 2 tsp. lemon juice 1 1/4 tsp. garlic powder 3/4 tsp. seasoned salt 220g (8 oz.) fettuccine or angel hair pasta (cooked and drained) 360ml (1 1/2 cups) broccoli floweretts
             </p>
-            <p className='text-lg underline'>
+            <Link href={'/recipes'} className='text-lg underline'>
               Continue Reading...
-            </p>
+            </Link>
           </article>
           <article className='flex flex-col gap-8 w-[320px]'>
             <div>
@@ -194,9 +194,9 @@ const Home: React.FC = () => {
             <p className='text-lg'>
               Ingredients 4 avocados 2 tablespoons of pico de gallo Juice of 1/2 lime 2 chopped Jalapeño OR 2 tablespoons of crushed red pepper OR 1 tablespoon of cayenne pepper 1 teaspoon of salt 4 teaspoons of olive oil 1 1/2
             </p>
-            <p className='text-lg underline'>
+            <Link href={'/recipes'} className='text-lg underline'>
               Continue Reading...
-            </p>
+            </Link>
           </article>
           <article className='flex flex-col gap-8 w-[320px]'>
             <div>
@@ -210,12 +210,12 @@ const Home: React.FC = () => {
             <p className='text-lg'>
               Ingredients 1 Tablespoon butter 1 cup onion, chopped 3 Tablespoons all-purpose flour 1/2 teaspoon curry powder 1/4 teaspoon cumin 1/4 teaspoon ground nutmeg 2 garlic cloves, crushed 1 cup peeled and cubed sweet potato 1/4 teaspoon salt 2 14-oz cans
             </p>
-            <p className='text-lg underline'>
+            <Link href={'/recipes'} className='text-lg underline'>
               Continue Reading...
-            </p>
+            </Link>
           </article>
         </div>
-        <Link href="/" className="relative inline-flex mt-10 items-center px-12 py-1 overflow-hidden text-lg font-medium text-white border-2 border-white rounded-md hover:text-secondaryColor group hover:bg-white">
+        <Link href="/recipes" className="relative inline-flex mt-10 items-center px-12 py-1 overflow-hidden text-lg font-medium text-white border-2 border-white rounded-md hover:text-secondaryColor group hover:bg-white">
           <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
           <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" stroke-linejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>

@@ -4,6 +4,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { getSession, signOut } from 'next-auth/react';
 import { useSearchParams } from 'next/navigation';
 import React, { useEffect, Suspense } from 'react';
+import { FaCheckCircle } from "react-icons/fa";
 
 const Success = () => {
     const { toast } = useToast();
@@ -50,10 +51,13 @@ const Success = () => {
                 <div className='w-[230px] md:w-[400px]'>
                     <img src="/logov1.png" alt="" />
                 </div>
-                <h1 className='font-bold text-5xl text-center md:text-7xl text-secondaryColor'>
+                <h2 className='text-9xl text-primaryColor'>
+                    <FaCheckCircle />
+                </h2>
+                <h1 className='font-bold text-5xl text-center md:text-6xl text-secondaryColor'>
                     Thanks for your Payment
                 </h1>
-                <p className='text-center'>
+                <p className='text-center text-[gray]'>
                     Your account has been upgraded to {subscription} plan and you are requested to login once again
                 </p>
             </main>

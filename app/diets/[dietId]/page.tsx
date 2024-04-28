@@ -2,14 +2,26 @@
 
 import Layout from '@/app/components/Layout/Layout';
 import { DIETS_PLANS } from '@/app/utils/constants';
+import { useToast } from '@/components/ui/use-toast';
+import { useSession } from 'next-auth/react';
 import { useParams } from 'next/navigation';
 import React from 'react';
 
 const DietDetails = () => {
 
+    const { data: session } = useSession();
     const params = useParams();
 
+    const { toast } = useToast();
+
     const diet = DIETS_PLANS.find(diet => diet.id === params.dietId);
+
+    const upgradePlan = () => {
+        toast({
+            title: "Upgrade",
+            description: "Purchase Pro plan to unlock this!"
+        });
+    }
 
     return (
         <Layout>
@@ -33,13 +45,25 @@ const DietDetails = () => {
                                 ))
                             }
                         </ul>
-                        <button className="relative inline-flex items-center px-12 py-1 overflow-hidden text-lg font-medium text-primaryColor border border-primaryColor rounded-md hover:text-white group hover:bg-primaryColor">
-                            <span className="absolute left-0 block w-full h-0 transition-all bg-primaryColor opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
-                            <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" stroke-linejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </span>
-                            <span className="relative text-md font-bold">Get Plan</span>
-                        </button> 
+                        {
+                            session?.user.subscription === "free" ? (
+                                    <button onClick={upgradePlan} className="relative inline-flex items-center px-12 py-1 overflow-hidden text-lg font-medium text-primaryColor border border-primaryColor rounded-md hover:text-white group hover:bg-primaryColor">
+                                        <span className="absolute left-0 block w-full h-0 transition-all bg-primaryColor opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+                                        <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" stroke-linejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        </span>
+                                        <span className="relative text-md font-bold">Get Plan</span>
+                                    </button> 
+                                ) : (
+                                    <a href={diet?.download} download={`${diet?.id}.pdf`} className="relative inline-flex items-center px-12 py-1 overflow-hidden text-lg font-medium text-primaryColor border border-primaryColor rounded-md hover:text-white group hover:bg-primaryColor">
+                                        <span className="absolute left-0 block w-full h-0 transition-all bg-primaryColor opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
+                                        <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" stroke-linejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                        </span>
+                                        <span className="relative text-md font-bold">Get Plan</span>
+                                    </a> 
+                                )
+                        }
                     </aside>
                 </section>
                 <section className='mt-14 flex flex-col gap-2'>

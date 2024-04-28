@@ -50,7 +50,7 @@ const Home: React.FC = () => {
         <aside className='flex flex-wrap gap-10 justify-center mt-10 text-center'>
           {
             SERVICES.map((card) => (
-              <Card key={card.title} className='border-2 border-secondaryColor w-[300px] flex flex-col justify-between gap-4 transition-all ease-out hover:shadow-lg hover:shadow-[gray] cursor-pointer'>
+              <Card key={card.title} className='w-[300px] flex flex-col justify-between gap-4 transition-all ease-out hover:shadow-lg hover:shadow-[gray] cursor-pointer'>
                 <CardHeader>
                   <img src={card.image} className='max-w-[100%] rounded-md' alt={card.title} />
                 </CardHeader>

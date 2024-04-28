@@ -3,19 +3,19 @@ export const SERVICES = [
     {
         image: "/dietPlan.webp",
         title: "Personalized Diet Plans",
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa cupiditate corrupti rerum libero repellendus incidunt non optio consequuntur, ipsa dolores?",
+        description: "Unlock your health potential with personalized diet plans designed just for you. Our expert nutritionists craft custom plans to match your tastes.",
         link: "/diets",
     },
     {
         image: "/recipes.jpg",
         title: "Food Recipes",
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa cupiditate corrupti rerum libero repellendus incidunt non optio consequuntur, ipsa dolores?",
+        description: "Explore a world of flavor with our enticing and delicious recipes. From quick fixes to gourmet wonders, there's something for everyone.",
         link: "/recipes",
     },
     {
         image: "/medicalElder.jpg",
         title: "Medical Assistance",
-        description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa cupiditate corrupti rerum libero repellendus incidunt non optio consequuntur, ipsa dolores?",
+        description: "Get instant access to compassionate care and guidance tailored to your needs. Click for reliable assistance and peace of mind on aging-related health issues.",
         link: "/assistance",
     },
 ]
@@ -74,19 +74,19 @@ export const RATINGS = [
         rate: 5,
         review: "Excellent Service",
         description: "Their service is brilliant! I really hope some of them are now using your service.",
-        customer: "Fiona"
+        customer: "Dayal"
     },
     {
         rate: 5,
-        review: "Love the flexibility",
-        description: "We are very happy with the box and we value that we can have the standard box or choose our own.",
-        customer: "Joseph"
+        review: "Love the Recipices",
+        description: "The recipes were easy to make and the filter functionality was helpful to find the perfect dish.",
+        customer: "Thakur"
     },
     {
         rate: 4,
         review: "Fantastic quality",
         description: "I'm really appreciating the quality and presentation. The flavour of the veg is outstanding.",
-        customer: "Michelle"
+        customer: "Birla"
     },
 ]
 

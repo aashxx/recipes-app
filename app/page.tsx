@@ -22,10 +22,10 @@ const Home: React.FC = () => {
       <section className='w-full md:h-[100vh] flex flex-col md:flex-row mt-24'>
         <motion.aside {...ANIMATIONS.left} className='md:w-[50%] bg-primaryColor h-full gap-10 flex flex-col justify-center items-start p-8 md:p-14 text-white'>
           <h1 className='font-bold text-6xl'>
-            Locally Farmed Organic Vegetable Delivery
+            Explore traditional village foods and recipes.
           </h1>
           <h2 className='text-xl'>
-            20 years of growing organic vegetables and delivering vegetable boxes from our 12 acre farm in Sussex.
+            Empowering busy gym-goers and individuals with health concerns to effortlessly maintain balanced nutrition with personalized meal plans and convenient delivery. 
           </h2>
           <Link href="/contact" className="relative inline-flex items-center px-12 py-1 overflow-hidden text-lg font-medium text-white border-2 border-white rounded-md hover:text-primaryColor group hover:bg-white">
             <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"></span>
@@ -72,7 +72,7 @@ const Home: React.FC = () => {
           }
         </aside>
       </motion.section>
-      <motion.section {...ANIMATIONS.up} className="mt-14 bg-[url('/hero-walls.jpg')] bg-center bg-no-repeat bg-cover py-28 px-8 md:px-[unset]">
+      {/* <motion.section {...ANIMATIONS.up} className="mt-14 bg-[url('/hero-walls.jpg')] bg-center bg-no-repeat bg-cover py-28 px-8 md:px-[unset]">
         <aside className='text-center text-white'>
           <h5 className='font-bold text-xl'>
             Meet us better
@@ -116,6 +116,19 @@ const Home: React.FC = () => {
             </p>
           </article>
         </div>
+      </motion.section> */}
+      <motion.section {...ANIMATIONS.up} className="mt-14 bg-[url('/hero-walls.jpg')] bg-center bg-no-repeat bg-cover py-28 px-8 md:px-[unset]">
+        <aside className='text-center text-white flex flex-col'>
+          <h2 className='font-bold md:text-4xl text-3xl'>
+            "Eat Right, Feel Great with Our Personalized Diet Plans"
+          </h2>
+          <h3 className='font-bold md:text-3xl text-2xl mt-10'>
+            "Savor Every Bite with Our Flavorful Recipes"
+          </h3>
+          <h4 className='font-bold md:text-2xl text-xl mt-10'>
+            "Your Health, Our Priority"
+          </h4>
+        </aside>
       </motion.section>
       <section className='mt-14 flex flex-wrap gap-10 items-center justify-center'>
         <motion.div {...ANIMATIONS.up}>
@@ -126,14 +139,14 @@ const Home: React.FC = () => {
             Why You'll Love Us
           </h2>
           <p className='md:w-[400px] text-xl'>
-            There is never been a better time to eat organic. Organic means working with nature. We're coming into a fantastic time for European food.
+            Experience personalized nutrition and expert support, addressing health concerns like diabetes and heart issues. Enjoy convenient delivery of traditional village foods and inspiring recipes, empowering your health goals.
           </p>
           <ul className='list-disc ml-10 font-semibold text-2xl'>
             <li>Delicious</li>
-            <li>Ethical</li>
-            <li>Sustainable</li>
-            <li>Seasonal</li>
-            <li>Free Delivery</li>
+            <li>Expert Support</li>
+            <li>Customized Solutions</li>
+            <li>Personalized Nutrition</li>
+            <li>Empowerment Through Cooking</li>
           </ul>
         </motion.aside>
       </section>

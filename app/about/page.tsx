@@ -20,8 +20,8 @@ const About: React.FC = () => {
         <h2 className='font-semibold text-5xl'>
           About Us
         </h2>
-        <p className='text-xl mt-6'>
-          We produce locally farmed organic vegetables that are affordable, seasonal, and as fresh as possible.
+        <p className='text-md mt-6 text-justify'>
+          At Nutriverse, we're dedicated to revolutionizing nutrition and wellness for every individual. Our mission is to provide customized dietary solutions tailored to diverse lifestyles and health needs. Whether you're a busy gym-goer seeking balance, or managing health conditions like diabetes and heart issues, we're here to support you. With a focus on convenience and quality, we offer traditional village foods and inspiring recipes delivered to your doorstep. Our commitment lies in empowering you to achieve your health goals with ease, ensuring a happier, healthier tomorrow.
         </p>
         <div className='relative'>
           <img className='mt-6 rounded-md' src="/hero-walls2.png" alt="AV" />
@@ -72,14 +72,14 @@ const About: React.FC = () => {
           <aside className='flex flex-wrap gap-10 justify-center mt-10 text-center'>
             {
               TEAM.map(guy => (
-                <Card className='w-[300px] text-white flex flex-col justify-between gap-4 transition-all ease-out cursor-pointer relative'>
+                <Card className='w-[300px] text-white flex border-2 flex-col justify-between gap-4 transition-all ease-out cursor-pointer relative'>
                   <div className='w-full h-96 overflow-hidden rounded-md'>
                     <img src={guy.photo} className='w-full h-full object-cover rounded-md transition-all duration-500 ease-in-out hover:scale-150' alt={'bn'} />
                   </div>
-                  <CardHeader className='absolute bottom-5 left-10'>
-                    <CardTitle className='font-semibold'>{guy.name}</CardTitle>
-                    <CardDescription className='text-white'>{guy.desgn}</CardDescription>
-                  </CardHeader>
+                  <div className='absolute -bottom-6 left-6 w-[250px] flex flex-col gap-0 rounded-full bg-white'>
+                    <p className='font-semibold text-[#655441] px-8 text-xl pt-[2px]'>{guy.name}</p>
+                    <p className='text-[#655441] text-sm pb-[2px]'>{guy.desgn}</p>
+                  </div>
                 </Card>
               ))
             }

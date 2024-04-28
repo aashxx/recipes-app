@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import Link from 'next/link';
 import { RecipeProps } from '../utils/types';
 
 const RecipeCard: React.FC<RecipeProps> = ({ recipe }) => {
@@ -17,10 +16,10 @@ const RecipeCard: React.FC<RecipeProps> = ({ recipe }) => {
         <CardDescription className='text-justify'>
           Health Labels: {recipe.healthLabels.join(', ')}
         </CardDescription>
-        <Link href={recipe.url} className="rounded px-5 py-2 group bg-primaryColor relative hover:bg-gradient-to-r overflow-hidden hover:from-primaryColor hover:to-primaryColor text-white hover:ring-2 hover:ring-offset-2 hover:ring-primaryColor transition-all ease-out duration-300">
+        <a href={recipe.url} target='blank' className="rounded px-5 py-2 group bg-primaryColor relative hover:bg-gradient-to-r overflow-hidden hover:from-primaryColor hover:to-primaryColor text-white hover:ring-2 hover:ring-offset-2 hover:ring-primaryColor transition-all ease-out duration-300">
           <span className="absolute right-0 w-2 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
           <span className="relative">View Recipe</span>
-        </Link>
+        </a>
       </CardHeader>
     </Card>
   );

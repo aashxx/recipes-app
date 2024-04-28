@@ -2,11 +2,14 @@
 
 import { useToast } from '@/components/ui/use-toast';
 import { getSession, signOut } from 'next-auth/react';
+import { useSearchParams } from 'next/navigation';
 import React, { useEffect } from 'react';
 
 const Success = () => {
 
     const { toast } = useToast();
+    const subscriprionParams = useSearchParams();
+    const subscription = subscriprionParams.get('subscription');
 
     useEffect(() => {
         paymentSuccess();
@@ -17,20 +20,19 @@ const Success = () => {
         const session = await getSession();
         if(session) {
             const emailId = session.user.email;
-            console.log(emailId);
             
             const response = await fetch('/api/subscribe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email: emailId, subscription: "Pro" })
+                body: JSON.stringify({ email: emailId, subscription: subscription })
             })
     
             if(response.ok) {
                 toast({
                     title: "Success",
-                    description: "You're now a Pro user",
+                    description: `You're now a ${subscription} user`,
                 });
                 await signOut({ redirect: true, callbackUrl: `${window.location.origin}/login` })
             } else {

@@ -26,7 +26,7 @@ export const PRICING = [
       description: "Trial version to get familiar with Nutriverse.",
       price: 0,
       billed: "/mo",
-      link: "/auth/signup",
+      link: "/signup",
       heading: "Free Plan Features",
       features: [
           "Nutriverse Platform",
@@ -41,7 +41,7 @@ export const PRICING = [
       description: "Access to all recipes and diet plans",
       price: 2499,
       billed: "/mo",
-      link: "https://buy.stripe.com/test_eVag0F7Ae7w3gsUeUZ",
+      link: "https://buy.stripe.com/test_cN229PdYCeYvb8AfZ4",
       heading: "Pro Plan Features",
       features: [
           "Access 2100+ recipes",
@@ -56,7 +56,7 @@ export const PRICING = [
       description: "Full access with all features unlocked.",
       price: 4499,
       billed: "/mo",
-      link: "https://buy.stripe.com/test_3csg0FcUyaIfb8A004",
+      link: "https://buy.stripe.com/test_eVa8yddYC9EbdgI28f",
       buttonText: "Contact Sales",
       heading: "Premium Plan Features",
       features: [

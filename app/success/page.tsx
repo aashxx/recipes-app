@@ -45,7 +45,7 @@ const Success = () => {
     };
 
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense>
             <main className='h-[100vh] px-4 w-full flex flex-col gap-10 justify-center items-center'>
                 <div className='w-[230px] md:w-[400px]'>
                     <img src="/logov1.png" alt="" />

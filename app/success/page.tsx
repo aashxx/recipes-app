@@ -1,22 +1,18 @@
-"use client";
-
 import { useToast } from '@/components/ui/use-toast';
 import { getSession, signOut } from 'next-auth/react';
 import { useSearchParams } from 'next/navigation';
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 
 const Success = () => {
-
     const { toast } = useToast();
-    const subscriprionParams = useSearchParams();
-    const subscription = subscriprionParams.get('subscription');
+    const subscriptionParams = useSearchParams();
+    const subscription = subscriptionParams.get('subscription');
 
     useEffect(() => {
         paymentSuccess();
     }, []);
 
     const paymentSuccess = async () => {
-
         const session = await getSession();
         if(session) {
             const emailId = session.user.email;
@@ -26,15 +22,15 @@ const Success = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email: emailId, subscription: subscription })
-            })
-    
+                body: JSON.stringify({ email: emailId, subscription })
+            });
+
             if(response.ok) {
                 toast({
                     title: "Success",
                     description: `You're now a ${subscription} user`,
                 });
-                await signOut({ redirect: true, callbackUrl: `${window.location.origin}/login` })
+                await signOut({ redirect: true, callbackUrl: `${window.location.origin}/login` });
             } else {
                 toast({
                     title: "Error",
@@ -44,21 +40,23 @@ const Success = () => {
                 console.error("Registration failed!");
             }
         }
-    }
+    };
 
     return (
-        <main className='h-[100vh] px-4 w-full flex flex-col gap-10 justify-center items-center'>
-            <div className='w-[230px] md:w-[400px]'>
-                <img src="/logov1.png" alt="" />
-            </div>
-            <h1 className='font-bold text-5xl text-center md:text-7xl text-secondaryColor'>
-                Thanks for your Payment
-            </h1>
-            <p className='text-center'>
-                Your account has been upgraded to {subscription} plan and you are requested to login once again
-            </p>
-        </main>
-    )
-}
+        <Suspense fallback={<div>Loading...</div>}>
+            <main className='h-[100vh] px-4 w-full flex flex-col gap-10 justify-center items-center'>
+                <div className='w-[230px] md:w-[400px]'>
+                    <img src="/logov1.png" alt="" />
+                </div>
+                <h1 className='font-bold text-5xl text-center md:text-7xl text-secondaryColor'>
+                    Thanks for your Payment
+                </h1>
+                <p className='text-center'>
+                    Your account has been upgraded to {subscription} plan and you are requested to login once again
+                </p>
+            </main>
+        </Suspense>
+    );
+};
 
 export default Success;

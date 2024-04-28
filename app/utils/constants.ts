@@ -56,7 +56,7 @@ export const PRICING = [
       description: "Full access with all features unlocked.",
       price: 4499,
       billed: "/mo",
-      link: "https://buy.stripe.com/test_eVa8yddYC9EbdgI28f",
+      link: "https://buy.stripe.com/test_dR65m1g6Kg2z1y0cMU",
       buttonText: "Contact Sales",
       heading: "Premium Plan Features",
       features: [

@@ -22,7 +22,7 @@ const Home: React.FC = () => {
       <section className='w-full md:h-[100vh] flex flex-col md:flex-row mt-24'>
         <motion.aside {...ANIMATIONS.left} className='md:w-[50%] bg-primaryColor h-full gap-10 flex flex-col justify-center items-start p-8 md:p-14 text-white'>
           <h1 className='font-bold text-6xl'>
-            Explore traditional village foods and recipes.
+            Join Us in Achieving Your Health Goals!
           </h1>
           <h2 className='text-xl'>
             Empowering busy gym-goers and individuals with health concerns to effortlessly maintain balanced nutrition with personalized meal plans and convenient delivery. 

@@ -4,12 +4,7 @@ import React from 'react'
 import Layout from '../components/Layout/Layout';
 import { ANIMATIONS, RATINGS, TEAM } from '../utils/constants';
 import Rating from '../components/Rating';
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 

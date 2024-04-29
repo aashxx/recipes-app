@@ -20,14 +20,13 @@ import {
     PopoverTrigger,
   } from "@/components/ui/popover";
 import { FaUserCircle } from "react-icons/fa";
-
   
 export const Header: React.FC<NavbarProps> = ({ setOpenNav }) => {
 
     const { data: session } = useSession();
 
     return (
-        <header className='md:p-8 p-4 flex justify-between z-50 items-center fixed top-0 left-0 h-24 w-full bg-white'>
+        <header className='md:p-8 p-4 flex justify-between z-50 items-center fixed top-0 left-0 h-24 right-0 bg-white'>
             <Link href={'/'}>
                 <img src="/logov1.png" className="w-[200px]" alt="Nutriverse" />
             </Link>

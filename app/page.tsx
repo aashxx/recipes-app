@@ -19,7 +19,7 @@ const Home: React.FC = () => {
 
   return (
     <Layout>
-      <section className='w-full md:h-[100vh] flex flex-col md:flex-row mt-24'>
+      <section className='w-full md:h-[100vh] flex overflow-x-hidden flex-col md:flex-row mt-24'>
         <motion.aside {...ANIMATIONS.left} className='md:w-[50%] bg-primaryColor h-full gap-10 flex flex-col justify-center items-start p-8 md:p-14 text-white'>
           <h1 className='font-bold text-6xl'>
             Join Us in Achieving Your Health Goals!
@@ -130,11 +130,11 @@ const Home: React.FC = () => {
           </h4>
         </aside>
       </motion.section>
-      <section className='mt-14 flex flex-wrap gap-10 items-center justify-center'>
-        <motion.div {...ANIMATIONS.up}>
+      <section className='mt-14 flex flex-wrap overflow-x-hidden gap-10 items-center justify-center'>
+        <motion.div {...ANIMATIONS.right}>
           <img className='rounded-md' src="https://img.freepik.com/free-photo/high-angle-delicious-salmon-bowl-indoors_23-2150533928.jpg?w=360" alt="AV" />
         </motion.div>
-        <motion.aside {...ANIMATIONS.up} className='flex flex-col gap-10 text-secondaryColor mx-10 md:mx-[unset]'>
+        <motion.aside {...ANIMATIONS.left} className='flex flex-col gap-10 text-secondaryColor mx-10 md:mx-[unset]'>
           <h2 className='text-5xl font-semibold'>
             Why You'll Love Us
           </h2>

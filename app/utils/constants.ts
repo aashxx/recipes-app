@@ -238,7 +238,7 @@ export const DIETS_PLANS = [
     name: "Vegetarian Diet Plan",
     summary: "A vegetarian diet primarily consists of plant-based foods, excluding animal flesh. It emphasizes fruits, vegetables, grains, legumes, nuts, and seeds, providing essential nutrients like vitamins, minerals, fiber, and antioxidants. Vegetarians typically avoid meat, poultry, seafood, and products containing animal-derived ingredients, embracing a diet rich in plant diversity for health and ethical reasons.",
     image: "/veg-diet.jpg",
-    download: "/veg.pdf",
+    download: "https://drive.google.com/uc?export=download&id=1UUCMbmA3OYSuXA5hRKX1GJ6bzWEvbRQe",
     health: [
       "Lowered cholesterol",
       "Improved digestion",
@@ -254,7 +254,7 @@ export const DIETS_PLANS = [
     name: "Non Vegetarian Diet Plan",
     summary: "A non-vegetarian diet includes animal-derived foods such as meat, poultry, seafood, and sometimes eggs and dairy products. It provides high-quality protein, essential amino acids, vitamins like B12, and minerals such as iron and zinc. Non-vegetarians may consume a variety of animal-based dishes for nutrition and culinary preferences.",
     image: "/non-veg-diet.jpg",
-    download: "/non-veg.pdf",
+    download: "https://drive.google.com/uc?export=download&id=15Fk_PfZbQxdx3272R_kEA8lkRiRvR-rs",
     health: [
       "High protein intake",
       "Improved muscle strength",
@@ -270,7 +270,7 @@ export const DIETS_PLANS = [
     name: "Keto Diet Plan",
     summary: "The ketogenic (keto) diet is a high-fat, low-carbohydrate eating plan designed to induce ketosis, a metabolic state where the body burns fat for fuel instead of carbohydrates. It emphasizes foods like meat, fish, eggs, nuts, seeds, oils, and non-starchy vegetables while restricting grains, sugars, fruits, and some vegetables to promote weight loss and metabolic health.",
     image: "/keto-diet.jpg",
-    download: "/keto.pdf",
+    download: "https://drive.google.com/uc?export=download&id=1H_XXAUoBVK2cTmFXyPxsVG_0vHvM28On",
     health: [
       "Weight loss",
       "Improved mental focus",
@@ -286,7 +286,7 @@ export const DIETS_PLANS = [
     name: "High Protein Diet Plan",
     summary: "A high-protein diet involves consuming increased amounts of protein-rich foods such as meat, poultry, fish, eggs, dairy, legumes, nuts, and seeds. It aims to support muscle repair and growth, enhance satiety, boost metabolism, aid in weight loss, improve bone health, and regulate hunger hormones for overall health and fitness.",
     image: "/protein-diet.jpg",
-    download: "/protein.pdf",
+    download: "https://drive.google.com/uc?export=download&id=1tXGV29xn6FXpvsLycaSos_JULfIOi-ML",
     health: [
       "Muscle repair and growth",
       "Increased satiety",
@@ -302,7 +302,7 @@ export const DIETS_PLANS = [
     name: "Vegan Diet Plan",
     summary: "A vegan diet is a plant-based eating pattern that excludes all animal-derived products, including meat, dairy, eggs, and honey. It centers on fruits, vegetables, grains, legumes, nuts, and seeds, providing essential nutrients like vitamins, minerals, fiber, and antioxidants. Veganism promotes ethical, environmental, and health-related benefits, fostering compassion and sustainability.",
     image: "/vegan-diet.jpg",
-    download: "/vegan.pdf",
+    download: "https://drive.google.com/uc?export=download&id=1PsYFiAKAE0dGIsea-HZHFyMZIYlqwbGB",
     health: [
       "Lower risk of heart disease",
       "Reduced inflammation",

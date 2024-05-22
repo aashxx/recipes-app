@@ -39,9 +39,9 @@ export const PRICING = [
   {
       name: "Pro",
       description: "Access to all recipes and diet plans",
-      price: 2499,
+      price: 1500,
       billed: "/mo",
-      link: "https://buy.stripe.com/test_cN229PdYCeYvb8AfZ4",
+      link: "https://buy.stripe.com/test_3cs5m1g6Kg2z3G8aEQ",
       heading: "Pro Plan Features",
       features: [
           "Access 2100+ recipes",
@@ -54,9 +54,9 @@ export const PRICING = [
   {
       name: "Premium",
       description: "Full access with all features unlocked.",
-      price: 4499,
+      price: 3000,
       billed: "/mo",
-      link: "https://buy.stripe.com/test_dR65m1g6Kg2z1y0cMU",
+      link: "https://buy.stripe.com/test_cN29Ch2fU4jRekM6oB",
       buttonText: "Contact Sales",
       heading: "Premium Plan Features",
       features: [

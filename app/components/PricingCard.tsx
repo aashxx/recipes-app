@@ -32,7 +32,7 @@ const PricingCard: React.FC<PricingProps> = ({ plan }) => {
       title: "Info",
       description: "You are already using Pro plan. Upgrade to premium"
     });
-    router.push('https://buy.stripe.com/test_dR65m1g6Kg2z1y0cMU');
+    router.push('https://buy.stripe.com/test_cN29Ch2fU4jRekM6oB');
   }
 
   return (

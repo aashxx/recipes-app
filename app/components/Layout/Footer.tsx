@@ -91,19 +91,19 @@ export const Footer: React.FC = () => {
                             <li>
                                 <a className='flex gap-1 items-center' href="mailto:210071601109@crescent.education?subject=Meeting%20Request">
                                     <IoMdMail />
-                                    nutriverse2024@gmail.com
+                                    email@example.com
                                 </a>
                             </li>
                             <li>
                                 <a className='flex gap-1 items-center' href="tel:+918220121649">
                                     <IoMdCall />
-                                    +91 8220121649
+                                    +91 1234567890
                                 </a>
                             </li>
                             <li>
                                 <a className='flex gap-1 items-center' href="+919597128066">
                                     <IoMdCall />
-                                    +91 9597128066
+                                    +91 1234567890
                                 </a>
                             </li>
                         </ul>

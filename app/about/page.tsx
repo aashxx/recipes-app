@@ -23,63 +23,6 @@ const About: React.FC = () => {
           <img className='w-[230px] md:w-[400px] absolute top-[85px] left-[82px] md:top-[162px] md:left-[150px]' src="/logov2.png" alt="Nutriverse" />
         </div>
       </motion.section>
-      <motion.section {...ANIMATIONS.up} className='mt-14'>
-        <div className='text-center text-secondaryColor'>
-          <h5 className='font-bold'>
-            Testimonials
-          </h5>
-          <h2 className='font-bold text-4xl mt-4'>
-            What Our Customers Say?
-          </h2>
-          <hr className='w-[100px] mx-auto border-secondaryColor border-3 mt-7' />
-        </div>
-        <div className='mt-14 flex flex-wrap gap-14 items-center justify-center'>
-          {
-            RATINGS.map((feedback, index) => (
-              <article key={index} className='flex flex-col gap-2 items-center'>
-                <div>
-                  <Rating rating={feedback.rate} />
-                </div>
-                <h3 className='text-2xl font-semibold'>
-                  “{feedback.review}”
-                </h3>
-                <p className='w-[270px] text-center text-md'>
-                  {feedback.description}
-                </p>
-                <strong className='text-md'>
-                  {feedback.customer}
-                </strong>
-              </article>
-            ))
-          }
-        </div>
-      </motion.section>
-      <motion.section {...ANIMATIONS.up} className='mt-14 bg-[#655441] py-20 px-8 md:px-[unset] flex flex-col items-center justify-center'>
-        <div className='text-center text-white'>
-            <h5 className='font-bold'>
-              Office
-            </h5>
-            <h2 className='font-bold text-4xl mt-4'>
-              Meet The Team
-            </h2>
-            <hr className='w-[100px] mx-auto border-white border-3 my-7' />
-          </div>
-          <aside className='flex flex-wrap gap-10 justify-center mt-10 text-center'>
-            {
-              TEAM.map(guy => (
-                <Card className='w-[300px] text-white flex border-2 flex-col justify-between gap-4 transition-all ease-out cursor-pointer relative'>
-                  <div className='w-full h-96 overflow-hidden rounded-md'>
-                    <img src={guy.photo} className='w-full h-full object-cover rounded-md transition-all duration-500 ease-in-out hover:scale-150' alt={'bn'} />
-                  </div>
-                  <div className='absolute -bottom-6 left-6 w-[250px] flex flex-col gap-0 rounded-full bg-white'>
-                    <p className='font-semibold text-[#655441] px-8 text-xl pt-[2px]'>{guy.name}</p>
-                    <p className='text-[#655441] text-sm pb-[2px]'>{guy.desgn}</p>
-                  </div>
-                </Card>
-              ))
-            }
-          </aside>
-      </motion.section>
       <section className='mt-14 text-center'>
         <h2 className='text-5xl font-semibold text-secondaryColor my-10'>
           Let's Grow Something Together.

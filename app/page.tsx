@@ -72,7 +72,7 @@ const Home: React.FC = () => {
           }
         </aside>
       </motion.section>
-      {/* <motion.section {...ANIMATIONS.up} className="mt-14 bg-[url('/hero-walls.jpg')] bg-center bg-no-repeat bg-cover py-28 px-8 md:px-[unset]">
+      <motion.section {...ANIMATIONS.up} className="mt-14 bg-[url('/hero-walls.jpg')] bg-center bg-no-repeat bg-cover py-28 px-8 md:px-[unset]">
         <aside className='text-center text-white'>
           <h5 className='font-bold text-xl'>
             Meet us better
@@ -116,8 +116,8 @@ const Home: React.FC = () => {
             </p>
           </article>
         </div>
-      </motion.section> */}
-      <motion.section {...ANIMATIONS.up} className="mt-14 bg-[url('/hero-walls.jpg')] bg-center bg-no-repeat bg-cover py-28 px-8 md:px-[unset]">
+      </motion.section>
+      {/* <motion.section {...ANIMATIONS.up} className="mt-14 bg-[url('/hero-walls.jpg')] bg-center bg-no-repeat bg-cover py-28 px-8 md:px-[unset]">
         <aside className='text-center text-white flex flex-col'>
           <h2 className='font-bold md:text-4xl text-3xl'>
             "Eat Right, Feel Great with Our Personalized Diet Plans"
@@ -129,7 +129,7 @@ const Home: React.FC = () => {
             "Your Health, Our Priority"
           </h4>
         </aside>
-      </motion.section>
+      </motion.section> */}
       <section className='mt-14 flex flex-wrap overflow-x-hidden gap-10 items-center justify-center'>
         <motion.div {...ANIMATIONS.right}>
           <img className='rounded-md' src="https://img.freepik.com/free-photo/high-angle-delicious-salmon-bowl-indoors_23-2150533928.jpg?w=360" alt="AV" />

@@ -54,10 +54,10 @@ const Recipes: React.FC = () => {
         try {
             setLoading(true);
             const filterQuery = appliedFilters.length > 0 ? `&${appliedFilters.join('&')}` : '';
-            const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${searchQuery}&app_id=c40f1265&app_key=%209866619b025e90846a17fa21d00a0911${filterQuery}`, {
+            const response = await fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${searchQuery}&app_id=3a91da49&app_key=c9476625a8a67d2aba41b15977176e65${filterQuery}`, {
                 method: 'GET',
                 headers: {
-                    "Content-Type": "application/json"
+                    "Edamam-Account-User": "3a91da49"
                 }
             });
 
